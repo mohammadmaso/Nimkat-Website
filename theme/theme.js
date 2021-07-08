@@ -1,4 +1,5 @@
 import { extendTheme } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
 
 const colors = {
   brand: {
@@ -8,6 +9,11 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ colors });
+const fonts = {
+    heading: "iranyekan",
+    body: "iranyekan",
+  }
+
+const theme = extendTheme({ colors, fonts });
 
 export default theme;
