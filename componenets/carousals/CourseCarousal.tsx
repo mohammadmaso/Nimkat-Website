@@ -58,7 +58,7 @@ export default function CourseCarousal({
         {loading ? <Spinner mt={3} color="primary" /> : null}
         <Slider {...settings}>
           {data &&
-            data.allCourses.edges.map((item) => (
+            data.allCourses.edges.map((item: any) => (
               <CourseCard key={item.node.id} {...item.node} />
             ))}
         </Slider>

@@ -3,7 +3,7 @@ import { Box, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import { appName } from '../../constants';
 
-export default function TextLogo(props) {
+export default function TextLogo(props: any) {
   return (
     <Box {...props}>
       <Image

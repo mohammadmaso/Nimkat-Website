@@ -72,7 +72,7 @@ export default function SingUp() {
             {({ isSubmitting }) => (
               <Form>
                 <Field name="username">
-                  {({ field, form }) => (
+                  {({ field, form }: { field: any; form: any }) => (
                     <FormControl>
                       <FormLabel>نام‌ کاربری</FormLabel>
                       <Input id="username" {...field} type="username" />
@@ -80,7 +80,7 @@ export default function SingUp() {
                   )}
                 </Field>
                 <Field name="email">
-                  {({ field, form }) => (
+                  {({ field, form }: { field: any; form: any }) => (
                     <FormControl>
                       <FormLabel>ایمیل</FormLabel>
                       <Input id="email" {...field} type="email" />
@@ -88,7 +88,7 @@ export default function SingUp() {
                   )}
                 </Field>
                 <Field name="password1">
-                  {({ field, form }) => (
+                  {({ field, form }: { field: any; form: any }) => (
                     <FormControl>
                       <FormLabel>رمزعبور</FormLabel>
                       <Input {...field} id="password1" type="password" />
@@ -96,7 +96,7 @@ export default function SingUp() {
                   )}
                 </Field>
                 <Field name="password2">
-                  {({ field, form }) => (
+                  {({ field, form }: { field: any; form: any }) => (
                     <FormControl>
                       <FormLabel>تکرار رمزعبور</FormLabel>
                       <Input {...field} id="password2" type="password" />

@@ -22,7 +22,13 @@ import { MobileSubNav } from './MobileSubNav';
 import { NAV_ITEMS } from './NAV_ITEMS';
 import Logo from '../logos/TextLogo';
 
-export const MobileNav = ({ onClose, isOpen }) => {
+export const MobileNav = ({
+  onClose,
+  isOpen,
+}: {
+  onClose: any;
+  isOpen: any;
+}) => {
   return (
     <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
       <DrawerOverlay>

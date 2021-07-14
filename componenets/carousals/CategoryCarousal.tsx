@@ -59,7 +59,7 @@ export default function CategoryCarousal({
         {loading ? <Spinner mt={3} color="primary" /> : null}
         <Slider {...settings}>
           {data &&
-            data.allCourseCategories.edges.map((item) => (
+            data.allCourseCategories.edges.map((item: any) => (
               <CategoryCard key={item.node.id} {...item.node} />
             ))}
         </Slider>
