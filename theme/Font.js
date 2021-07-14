@@ -110,49 +110,49 @@ const Fonts = () => (
 
         @font-face {
         font-family: iransans;
-        src: url('fonts/iransans/IRANSansMobile_Regular.eot');
-        src: local('IRANSansMobile Regular'), local('IRANSansMobile_Regular'), url('fonts/iransans/IRANSansMobile_Regular.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile_Regular.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile_Regular.woff') format('woff'), url('fonts/iransans/IRANSansMobile_Regular.ttf') format('truetype');
+        src: url('fonts/iransans/IRANSansMobile(FaNum)_Regular.eot');
+        src: local('IRANSansMobile Regular'), local('IRANSansMobile_Regular'), url('fonts/iransans/IRANSansMobile(FaNum)_Regular.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile(FaNum)_Regular.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile(FaNum)_Regular.woff') format('woff'), url('fonts/iransans/IRANSansMobile(FaNum)_Regular.ttf') format('truetype');
         font-weight: 400;
         font-style: normal;
         }
         @font-face {
         font-family: iransans;
-        src: url('fonts/iransans/IRANSansMobile_Regular.eot');
-        src: local('IRANSansMobile Regular'), local('IRANSansMobile_Regular'), url('fonts/iransans/IRANSansMobile_Regular.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile_Regular.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile_Regular.woff') format('woff'), url('fonts/iransans/IRANSansMobile_Regular.ttf') format('truetype');
+        src: url('fonts/iransans/IRANSansMobile(FaNum)_Regular.eot');
+        src: local('IRANSansMobile Regular'), local('IRANSansMobile_Regular'), url('fonts/iransans/IRANSansMobile(FaNum)_Regular.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile(FaNum)_Regular.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile(FaNum)_Regular.woff') format('woff'), url('fonts/iransans/IRANSansMobile(FaNum)_Regular.ttf') format('truetype');
         }
         @font-face {
         font-family: iransans;
-        src: url('fonts/iransans/IRANSansMobile_Light.eot');
-        src: local('IRANSansMobile Light'), local('IRANSansMobile_Light'), url('fonts/iransans/IRANSansMobile_Light.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile_Light.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile_Light.woff') format('woff'), url('fonts/iransans/IRANSansMobile_Light.ttf') format('truetype');
+        src: url('fonts/iransans/IRANSansMobile(FaNum)_Light.eot');
+        src: local('IRANSansMobile Light'), local('IRANSansMobile_Light'), url('fonts/iransans/IRANSansMobile(FaNum)_Light.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile(FaNum)_Light.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile(FaNum)_Light.woff') format('woff'), url('fonts/iransans/IRANSansMobile(FaNum)_Light.ttf') format('truetype');
         font-weight: 300;
         font-style: normal;
         }
         @font-face {
         font-family: iransans;
-        src: url('fonts/iransans/IRANSansMobile_Light.eot');
-        src: local('IRANSansMobile Light'), local('IRANSansMobile_Light'), url('fonts/iransans/IRANSansMobile_Light.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile_Light.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile_Light.woff') format('woff'), url('fonts/iransans/IRANSansMobile_Light.ttf') format('truetype');
+        src: url('fonts/iransans/IRANSansMobile(FaNum)_Light.eot');
+        src: local('IRANSansMobile Light'), local('IRANSansMobile_Light'), url('fonts/iransans/IRANSansMobile(FaNum)_Light.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile(FaNum)_Light.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile(FaNum)_Light.woff') format('woff'), url('fonts/iransans/IRANSansMobile(FaNum)_Light.ttf') format('truetype');
         
         }
         @font-face {
         font-family: iransans;
-        src: url('fonts/iransans/IRANSansMobile_UltraLight.eot');
-        src: local('IRANSansMobile UltraLight'), local('IRANSansMobile_UltraLight'), url('fonts/iransans/IRANSansMobile_UltraLight.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile_UltraLight.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile_UltraLight.woff') format('woff'), url('fonts/iransans/IRANSansMobile_UltraLight.ttf') format('truetype');
+        src: url('fonts/iransans/IRANSansMobile(FaNum)_UltraLight.eot');
+        src: local('IRANSansMobile UltraLight'), local('IRANSansMobile_UltraLight'), url('fonts/iransans/IRANSansMobile(FaNum)_UltraLight.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile(FaNum)_UltraLight.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile(FaNum)_UltraLight.woff') format('woff'), url('fonts/iransans/IRANSansMobile(FaNum)_UltraLight.ttf') format('truetype');
         font-weight: 300;
         font-style: normal;
         }
        
         @font-face {
         font-family: iransans;
-        src: url('fonts/iransans/IRANSansMobile_Medium.eot');
-        src: local('IRANSansMobile Medium'), local('IRANSansMobile_Medium'), url('fonts/iransans/IRANSansMobile_Medium.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile_Medium.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile_Medium.woff') format('woff'), url('fonts/iransans/IRANSansMobile_Medium.ttf') format('truetype');
+        src: url('fonts/iransans/IRANSansMobile(FaNum)_Medium.eot');
+        src: local('IRANSansMobile Medium'), local('IRANSansMobile_Medium'), url('fonts/iransans/IRANSansMobile(FaNum)_Medium.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile(FaNum)_Medium.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile(FaNum)_Medium.woff') format('woff'), url('fonts/iransans/IRANSansMobile(FaNum)_Medium.ttf') format('truetype');
         font-weight: 500;
         font-style: normal;
         }
         
         @font-face {
         font-family: iransans;
-        src: url('fonts/iransans/IRANSansMobile_Bold.eot');
-        src: local('IRANSansMobile Bold'), local('IRANSansMobile_Bold'), url('fonts/iransans/IRANSansMobile_Bold.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile_Bold.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile_Bold.woff') format('woff'), url('fonts/iransans/IRANSansMobile_Bold.ttf') format('truetype');
+        src: url('fonts/iransans/IRANSansMobile(FaNum)_Bold.eot');
+        src: local('IRANSansMobile Bold'), local('IRANSansMobile_Bold'), url('fonts/iransans/IRANSansMobile(FaNum)_Bold.eot?#iefix') format('embedded-opentype'), url('fonts/iransans/IRANSansMobile(FaNum)_Bold.woff2') format('woff2'), url('fonts/iransans/IRANSansMobile(FaNum)_Bold.woff') format('woff'), url('fonts/iransans/IRANSansMobile(FaNum)_Bold.ttf') format('truetype');
         font-weight: 700;
         font-style: normal;
         }

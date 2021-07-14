@@ -20,6 +20,7 @@ import {
 } from 'react-icons/io5';
 import { MobileSubNav } from './MobileSubNav';
 import { NAV_ITEMS } from './NAV_ITEMS';
+import Logo from '../logos/TextLogo';
 
 export const MobileNav = ({ onClose, isOpen }) => {
   return (
@@ -29,6 +30,7 @@ export const MobileNav = ({ onClose, isOpen }) => {
           <DrawerCloseButton />
 
           <DrawerHeader>
+            <Logo darkLogo height={70} width={150} />
             <Divider />
           </DrawerHeader>
           <DrawerBody>
@@ -40,7 +42,7 @@ export const MobileNav = ({ onClose, isOpen }) => {
           </DrawerBody>
           <Divider />
 
-          <DrawerFooter justifyContent="center">
+          <DrawerFooter textColor="primary" justifyContent="center">
             <HStack spacing="10px">
               <IoLogoSoundcloud />
               <IoLogoInstagram />

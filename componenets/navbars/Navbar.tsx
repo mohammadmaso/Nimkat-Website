@@ -14,18 +14,19 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Logo from '../logos/TextLogo';
 import { IoMenuOutline as MenuIcon } from 'react-icons/io5';
-
 import Link from 'next/link';
+import useIsSignedIn from '../../hooks/useIsSignedIn';
 
-import { FiBookOpen } from 'react-icons/fi';
 import { HiOutlineLightBulb } from 'react-icons/hi';
 
 import { MobileNav } from './MobileNav';
 import { DesktopNav } from './DesktopNav';
+import NavProfile from './NavProfile';
 
 const NavBar = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
   const [stickyNav, setStickyNav] = useState(false);
+  const isSignedIn = useIsSignedIn();
 
   const handleScroll = () => {
     if (window.pageYOffset > 200) {
@@ -58,7 +59,7 @@ const NavBar = () => {
         zIndex={2}
       >
         <Flex
-          flex={{ base: 1, md: 'auto' }}
+          flex={{ base: 'flex', md: 'auto' }}
           ml={{ base: -2 }}
           display={{ base: 'flex', md: 'none' }}
         >
@@ -89,33 +90,36 @@ const NavBar = () => {
             justify="space-between"
             wrap="wrap"
             display={{ base: 'none', md: 'flex' }}
-            ml={10}
+            mr={10}
           >
             <DesktopNav />
           </Flex>
         </Flex>
-
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={'flex-end'}
-          direction={'row'}
-          spacing={6}
-        >
-          <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'}>
-            <Link href="/signin">Sign In</Link>
-          </Button>
-          <Button
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'primary'}
-            rounded="3xl"
-            size="sm"
+        {isSignedIn ? (
+          <NavProfile />
+        ) : (
+          <Stack
+            flex={{ base: 1, md: 0 }}
+            justify={'flex-end'}
+            direction={'row'}
+            spacing={3}
           >
-            <Link href="/signup">ثبت‌‌نام</Link>
-          </Button>
-        </Stack>
+            <Button as={'a'} fontSize={'sm'} fontWeight={500} variant={'link'}>
+              <Link href="auth/signin">ورود</Link>
+            </Button>
+            <Button
+              display={{ base: 'none', md: 'inline-flex' }}
+              fontSize={'sm'}
+              fontWeight={600}
+              color={'white'}
+              bg={'primary'}
+              rounded="3xl"
+              size="sm"
+            >
+              <Link href="auth/signup">ثبت‌‌نام</Link>
+            </Button>
+          </Stack>
+        )}
       </Flex>
 
       <MobileNav isOpen={isOpen} onClose={onClose} />

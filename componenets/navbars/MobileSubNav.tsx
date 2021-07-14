@@ -29,6 +29,7 @@ export const MobileSubNav = ({ label, children, href, icon }: NavItem) => {
         {icon}
         <Link href={href ?? '#'}>
           <Text
+            pr={3}
             fontWeight={600}
             color={useColorModeValue('gray.600', 'gray.200')}
           >

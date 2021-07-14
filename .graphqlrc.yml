@@ -1,0 +1,5 @@
+schema: 'graphql/schema.graphql'
+extensions:
+  endpoints:
+    default:
+      url: https://nimkat-academy.herokuapp.com/graphql

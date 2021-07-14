@@ -2,6 +2,7 @@ import { Box } from '@chakra-ui/react';
 import Head from 'next/head';
 import React, { ReactElement } from 'react';
 import NavBar from '../componenets/navbars/Navbar';
+import MainFooter from '../componenets/footers/MainFooter';
 
 interface Props {
   children: React.ReactNode;
@@ -20,6 +21,7 @@ const BaseLayout = (props: Props): ReactElement => {
       <Box minHeight="78vh" px={[2, 2, 120]}>
         {props.children}
       </Box>
+      <MainFooter />
       {/* <LargeFooter /> */}
     </>
   );
