@@ -12,10 +12,10 @@ import {
 } from '@chakra-ui/react';
 
 interface Props {
-  id: String;
-  title?: String;
-  shortDescription?: String;
-  image?: String;
+  id: string;
+  title?: string;
+  shortDescription?: string;
+  image?: string;
 }
 
 const CategoryCart = (props: Props) => {
