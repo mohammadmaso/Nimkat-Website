@@ -23,6 +23,7 @@ export const GET_COURSES = gql`query Query {
       node {
         id
         title
+        createdAt
         shortDescription
         category {
           title
@@ -32,6 +33,9 @@ export const GET_COURSES = gql`query Query {
         price
         discountPrice
         slug
+        teacher {
+          name
+        }
       }
     }
   }

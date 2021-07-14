@@ -19,7 +19,7 @@ export default function CourseCarousal({
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
     responsive: [

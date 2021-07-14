@@ -20,10 +20,12 @@ import Image from 'next/image';
 
 import { useMutation } from '@apollo/client';
 import { SIGN_IN } from '../../graphql/mutations/auth';
+import { useRouter } from 'next/router';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
   const [signIn, { loading, error, data }] = useMutation(SIGN_IN, {
     onCompleted: (data) => {
@@ -33,6 +35,7 @@ export default function SignIn() {
           'refresh-token',
           data.tokenAuth.refreshToken as string
         );
+        router.push('/');
       }
     },
   });

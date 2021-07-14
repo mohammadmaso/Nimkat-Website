@@ -73,17 +73,19 @@ const NavBar = () => {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Box
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}
-          >
-            <Logo
-              darkLogo
-              height={stickyNav ? 50 : 50}
-              width={stickyNav ? 120 : 120}
-            />
-          </Box>
+          <Link href="/">
+            <Box
+              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+              fontFamily={'heading'}
+              color={useColorModeValue('gray.800', 'white')}
+            >
+              <Logo
+                darkLogo
+                height={stickyNav ? 50 : 50}
+                width={stickyNav ? 120 : 120}
+              />
+            </Box>
+          </Link>
 
           <Flex
             align="center"
