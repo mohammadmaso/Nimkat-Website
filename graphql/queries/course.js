@@ -2,7 +2,7 @@
 import { gql } from '@apollo/client';
 
 
-export const ME = gql`query Query {
+export const GET_CATEGORIES = gql`query Query {
   allCourseCategories {
     edges {
       node {
@@ -16,3 +16,25 @@ export const ME = gql`query Query {
   }
 }
 `
+
+export const GET_COURSES = gql`query Query {
+  allCourses {
+    edges {
+      node {
+        id
+        title
+        shortDescription
+        category {
+          title
+        }
+        image
+        language
+        price
+        discountPrice
+        slug
+      }
+    }
+  }
+}
+`
+
