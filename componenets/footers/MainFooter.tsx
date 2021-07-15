@@ -87,7 +87,6 @@ export default function LargeWithNewsletter() {
                 gap={1}
                 textColor="primary"
                 fontSize="xl"
-                justifySelf="flex-end"
               >
                 <AiOutlineTwitter />
                 <AiOutlineWhatsApp />

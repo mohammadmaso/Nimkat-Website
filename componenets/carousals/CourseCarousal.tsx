@@ -21,7 +21,7 @@ export default function CourseCarousal({
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,

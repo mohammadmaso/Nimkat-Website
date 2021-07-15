@@ -8,7 +8,6 @@ export const ME = gql`query Query {
     lastName
     email
     avatar
-    verified
   }
 }`
 

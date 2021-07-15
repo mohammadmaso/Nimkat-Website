@@ -22,7 +22,7 @@ export default function CategoryCarousal({
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
-    arrows: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,

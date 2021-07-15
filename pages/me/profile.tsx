@@ -1,12 +1,15 @@
 import React from 'react';
+import ProfileHeader from '../../componenets/ProfileHeader';
+import ProfileTabs from '../../componenets/ProfileTabs';
 import { appName } from '../../constants';
 
 import BaseLayout from '../../layouts/BaseLayout';
 
-export default function Home() {
+export default function Profile() {
   return (
     <BaseLayout title={appName}>
-      <p>سلم</p>
+      <ProfileHeader />
+      <ProfileTabs />
     </BaseLayout>
   );
 }

@@ -23,6 +23,7 @@ import { useRouter } from 'next/router';
 
 import { useQuery } from '@apollo/client';
 import { ME } from '../../graphql/queries/user';
+import Link from 'next/link';
 
 interface Props {}
 
@@ -34,8 +35,13 @@ const NavProfile = (props: Props) => {
 
   const signOut = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('refresh-token');
     router.push('/landing');
   };
+
+  if (loading) {
+    return null;
+  }
 
   return (
     <div>
@@ -46,18 +52,24 @@ const NavProfile = (props: Props) => {
           rightIcon={<ChevronDownIcon />}
         >
           <Flex direction="row-reverse" alignItems="center">
-            <Avatar shadow="lg" name="" src="https://bit.ly/dan-abramov" />
+            <Avatar
+              shadow="lg"
+              // name={data.me.firstName + data.me.lastName}
+              src={data.me.avatar}
+            />
             <Text
               display={{ base: 'none', md: 'unset' }}
               fontSize={{ base: '12px', md: '14px' }}
               pl={2}
             >
-              محمد مسعودی
+              {data.me.firstName} {data.me.lastName}
             </Text>
           </Flex>
         </MenuButton>
         <MenuList>
-          <MenuItem icon={<FiUser />}>حساب کاربری</MenuItem>
+          <Link href="/me/profile">
+            <MenuItem icon={<FiUser />}>حساب کاربری</MenuItem>
+          </Link>
           <MenuItem icon={<FiBookOpen />}>دوره‌های من</MenuItem>
           <MenuItem onClick={signOut} icon={<FiLogOut />}>
             خروج
