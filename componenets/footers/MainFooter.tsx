@@ -66,7 +66,7 @@ export default function LargeWithNewsletter() {
             direction="row"
           >
             <Stack>
-              <Box>
+              {/* <Box>
                 <Image
                   src="/images/samandehi.png"
                   layout="fixed"
@@ -81,7 +81,7 @@ export default function LargeWithNewsletter() {
                   height={150 / 1.3}
                   alt="enamad"
                 />
-              </Box>
+              </Box> */}
               <Grid
                 templateColumns="repeat(5, 1fr)"
                 gap={1}
