@@ -51,7 +51,7 @@ export default function SignIn() {
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex
         p={8}
-        flex={1}
+        flex="1"
         align={'center'}
         justify={'center'}
         zIndex={100}
@@ -81,6 +81,7 @@ export default function SignIn() {
                 direction={{ base: 'column', sm: 'row' }}
                 align={'start'}
                 justify={'space-between'}
+                mt="2"
               >
                 <Checkbox>بخاطر سپاری ورود</Checkbox>
                 <Link color={'primary'}>فراموشی رمز عبور</Link>
@@ -110,15 +111,16 @@ export default function SignIn() {
           </form>
         </Stack>
       </Flex>
-      <Flex flex={2}>
-        <Box>
-          <Image
-            alt={'Login Image'}
-            layout="fill"
-            src={'/images/photo-1454165804606-c3d57bc86b40.jpeg'}
-          />
-        </Box>
-      </Flex>
+
+      <Box flex="2">
+        <Image
+          alt={'Login Image'}
+          layout="responsive"
+          width="1034"
+          height="962"
+          src={'/images/photo-1454165804606-c3d57bc86b40.jpeg'}
+        />
+      </Box>
     </Stack>
   );
 }
