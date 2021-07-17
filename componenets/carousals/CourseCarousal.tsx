@@ -4,18 +4,11 @@ import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import CourseCard from '../cards/CourseCard';
 import Slider from 'react-slick';
 
-import { useQuery } from '@apollo/client';
-import { GET_COURSES } from '../../graphql/queries/course';
-
 interface Props {
   slideToShow?: number;
 }
 
-export default function CourseCarousal({
-  slideToShow = 5,
-}: Props): ReactElement {
-  const { loading, error, data } = useQuery(GET_COURSES);
-
+export default function CourseCarousal(props: any): ReactElement {
   const settings = {
     dots: true,
     infinite: true,
@@ -55,12 +48,10 @@ export default function CourseCarousal({
         آخرین دوره‌ها
       </Heading>
       <Stack width="full" alignContent="center">
-        {loading ? <Spinner mt={3} color="primary" /> : null}
         <Slider {...settings}>
-          {data &&
-            data.allCourses.edges.map((item: any) => (
-              <CourseCard key={item.node.id} {...item.node} />
-            ))}
+          {props.allCourses.edges.map((item: any) => (
+            <CourseCard key={item.node.id} {...item.node} />
+          ))}
         </Slider>
       </Stack>
     </Box>

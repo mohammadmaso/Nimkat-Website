@@ -7,7 +7,7 @@ import BaseLayout from '../../layouts/BaseLayout';
 
 export default function Profile() {
   return (
-    <BaseLayout title={appName}>
+    <BaseLayout title={'نیمکت | حساب من'}>
       <ProfileHeader />
       <ProfileTabs />
     </BaseLayout>

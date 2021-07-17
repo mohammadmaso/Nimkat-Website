@@ -1,15 +1,14 @@
 import React from 'react';
-import CategoryCarousal from '../../componenets/carousals/CategoryCarousal';
-import CourseCarousal from '../../componenets/carousals/CourseCarousal';
-import { appName } from '../../constants';
 
 import BaseLayout from '../../layouts/BaseLayout';
+import CategoryListView from '../../views/CategoryListView';
+import CourseListView from '../../views/CourseListView';
 
 export default function Home() {
   return (
-    <BaseLayout title={appName}>
-      <CategoryCarousal />
-      <CourseCarousal />
+    <BaseLayout title={'نیمکت | دوره‌ها'}>
+      <CategoryListView />
+      <CourseListView />
     </BaseLayout>
   );
 }

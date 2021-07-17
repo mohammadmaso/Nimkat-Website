@@ -1,17 +1,16 @@
 import React from 'react';
 import LandingCallToAction1 from '../componenets/callToActions/LandingCallToAction1';
-import CategoryCarousal from '../componenets/carousals/CategoryCarousal';
-import CourseCarousal from '../componenets/carousals/CourseCarousal';
-import { appName } from '../constants';
 
 import BaseLayout from '../layouts/BaseLayout';
+import CategoryListView from '../views/CategoryListView';
+import CourseListView from '../views/CourseListView';
 
 export default function Home() {
   return (
-    <BaseLayout title={appName}>
+    <BaseLayout title={'نیمکت آکادمی'}>
       <LandingCallToAction1 />
-      <CategoryCarousal />
-      <CourseCarousal />
+      <CategoryListView />
+      <CourseListView />
     </BaseLayout>
   );
 }

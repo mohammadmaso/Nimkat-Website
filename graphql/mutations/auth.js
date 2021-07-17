@@ -10,7 +10,7 @@ export const SIGN_IN = gql`
 `;
 
 export const SIGN_UP = gql`
-  mutation RegisterMutation($registerEmail: String!, $registerUsername: String!, $registerPassword1: String!, $registerPassword2: String!) {
+  mutation Mutation($registerEmail: String!, $registerUsername: String!, $registerPassword1: String!, $registerPassword2: String!) {
   register(email: $registerEmail, username: $registerUsername, password1: $registerPassword1, password2: $registerPassword2) {
     success
     errors
@@ -20,7 +20,7 @@ export const SIGN_UP = gql`
 
 
 export const RESEND_ACTIVATION_EMAIL = gql`
-  mutation RegisterMutation($resendActivationEmailEmail: String!) {
+  mutation Mutation($resendActivationEmailEmail: String!) {
   resendActivationEmail(email: $resendActivationEmailEmail) {
     success
     errors
@@ -30,7 +30,7 @@ export const RESEND_ACTIVATION_EMAIL = gql`
 
 
 export const VERIFY_ACCOUNT = gql`
-  mutation RegisterMutation($verifyAccountToken: String!) {
+  mutation Mutation($verifyAccountToken: String!) {
   verifyAccount(token: $verifyAccountToken) {
     success
     errors
@@ -60,7 +60,7 @@ export const PASSWORD_RESET_TOKEN = gql`
 `;
 
 export const SEND_PASSWORD_RESET_EMAIL = gql`
-  mutation RegisterMutation($sendPasswordResetEmailEmail: String!) {
+  mutation Mutation($sendPasswordResetEmailEmail: String!) {
   sendPasswordResetEmail(email: $sendPasswordResetEmailEmail) {
     success
     errors

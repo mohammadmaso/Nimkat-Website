@@ -4,18 +4,7 @@ import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import CategoryCard from '../cards/CategoryCard';
 import Slider from 'react-slick';
 
-import { useQuery } from '@apollo/client';
-import { GET_CATEGORIES } from '../../graphql/queries/course';
-
-interface Props {
-  slideToShow?: number;
-}
-
-export default function CategoryCarousal({
-  slideToShow = 5,
-}: Props): ReactElement {
-  const { loading, error, data } = useQuery(GET_CATEGORIES);
-
+export default function CategoryCarousal(props: any): ReactElement {
   const settings = {
     dots: true,
     infinite: true,
@@ -56,12 +45,10 @@ export default function CategoryCarousal({
         دسته‌بندی‌ها
       </Heading>
       <Stack width="full" alignContent="center">
-        {loading ? <Spinner mt={3} color="primary" /> : null}
         <Slider {...settings}>
-          {data &&
-            data.allCourseCategories.edges.map((item: any) => (
-              <CategoryCard key={item.node.id} {...item.node} />
-            ))}
+          {props.allCourseCategories.edges.map((item: any) => (
+            <CategoryCard key={item.node.id} {...item.node} />
+          ))}
         </Slider>
       </Stack>
     </Box>

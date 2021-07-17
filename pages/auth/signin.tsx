@@ -21,6 +21,7 @@ import Image from 'next/image';
 import { useMutation } from '@apollo/client';
 import { SIGN_IN } from '../../graphql/mutations/auth';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
@@ -49,6 +50,10 @@ export default function SignIn() {
 
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+      <Head>
+        <title>نیمکت آکادمی | ورود</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Flex
         p={8}
         flex="1"

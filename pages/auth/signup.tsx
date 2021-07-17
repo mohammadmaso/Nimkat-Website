@@ -21,6 +21,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import { useMutation } from '@apollo/client';
 import { SIGN_UP } from '../../graphql/mutations/auth';
+import Head from 'next/head';
 
 export default function SingUp() {
   const router = useRouter();
@@ -35,6 +36,10 @@ export default function SingUp() {
 
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+      <Head>
+        <title>نیمکت آکادمی | ثبت نام</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Flex
         p={8}
         flex={1}
