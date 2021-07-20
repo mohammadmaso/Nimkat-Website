@@ -17,30 +17,63 @@ import React, { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import TextLogo from '../../componenets/logos/TextLogo';
 import Image from 'next/image';
+import BeatLoader from 'react-spinners/BeatLoader';
 
 import { useMutation } from '@apollo/client';
-import { SIGN_IN } from '../../graphql/mutations/auth';
+import {
+  VERIFY_ACCOUNT_SMS,
+  RESEND_ACTIVATION_SMS,
+} from '../../graphql/mutations/auth';
+import { useRouter } from 'next/router';
 
 export default function SignIn() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [code, setCode] = useState('');
 
-  const [signIn, { loading, error, data }] = useMutation(SIGN_IN, {
+  const [result, setResult] = useState('');
+  const router = useRouter();
+
+  const [
+    verify,
+    {
+      loading: verificationLoading,
+      error: verificationError,
+      data: verificationData,
+    },
+  ] = useMutation(VERIFY_ACCOUNT_SMS, {
     onCompleted: (data) => {
       if (data) {
-        localStorage.setItem('token', data.tokenAuth.token as string);
-        localStorage.setItem(
-          'refresh-token',
-          data.tokenAuth.refreshToken as string
-        );
+        if (data && data.verifySms.success) {
+          router.push('/auth/signin');
+        }
+      }
+    },
+  });
+
+  const [
+    resend,
+    { loading: resendLoading, error: resendError, data: resendData },
+  ] = useMutation(RESEND_ACTIVATION_SMS, {
+    onCompleted: (data) => {
+      if (data) {
+        if (data && data.resendSms.success) {
+          setResult('کد با موفقیت ارسال شد');
+        }
       }
     },
   });
 
   function onSubmit(e: any) {
     e.preventDefault();
-    signIn({
-      variables: { tokenAuthEmail: email, tokenAuthPassword: password },
+    verify({
+      variables: { verifySmsCode: code, verifySmsUsername: router.query.phone },
+    });
+  }
+
+  function handleResendCode(e: any) {
+    setResult('');
+    e.preventDefault();
+    resend({
+      variables: { resendSmsUsername: router.query.phone },
     });
   }
 
@@ -57,30 +90,34 @@ export default function SignIn() {
         <Stack spacing={4} w={'full'} maxW={'md'}>
           <TextLogo height="100" width="200" />
           <Heading fontWeight="medium" fontSize={'xl'}>
-            ورود به حساب کاربری
+            فعالسازی‌ حساب ‌کاربری
           </Heading>
-          {error ? <Text>{error.message}</Text> : null}
+          {verificationError ? <Text>{verificationError.message}</Text> : null}
 
           <form onSubmit={onSubmit}>
-            <FormControl id="email">
-              <FormLabel>ایمیل</FormLabel>
-              <Input onChange={(e) => setEmail(e.target.value)} type="email" />
+            <FormControl id="code">
+              <FormLabel>کد ارسال شده</FormLabel>
+              <Input onChange={(e) => setCode(e.target.value)} />
             </FormControl>
-            <FormControl id="password">
-              <FormLabel>رمزعبور</FormLabel>
-              <Input
-                onChange={(e) => setPassword(e.target.value)}
-                type="password"
-              />
-            </FormControl>
+
             <Stack spacing={6}>
               <Stack
                 direction={{ base: 'column', sm: 'row' }}
                 align={'start'}
                 justify={'space-between'}
+                mt={2}
               >
-                <Checkbox>بخاطر سپاری ورود</Checkbox>
-                <Link color={'primary'}>فراموشی رمز عبور</Link>
+                <Button
+                  spinner={<BeatLoader size={8} color="#215970" />}
+                  color={'primary'}
+                  isLoading={resendLoading}
+                  onClick={handleResendCode}
+                  variant="link"
+                  fontSize="medium"
+                >
+                  ارسال دوباره کد
+                </Button>
+                <Text>{result}</Text>
               </Stack>
               <Button
                 bgColor="primary"
@@ -88,34 +125,23 @@ export default function SignIn() {
                 rounded="full"
                 variant={'solid'}
                 type="submit"
+                isLoading={verificationLoading}
               >
-                {loading ? <Spinner /> : 'ورود'}
-              </Button>
-
-              <Button
-                w={'full'}
-                maxW={'md'}
-                rounded="full"
-                variant={'outline'}
-                leftIcon={<FcGoogle />}
-              >
-                <Center>
-                  <Text>ورود با گوگل</Text>
-                </Center>
+                فعالسازی‌ حساب
               </Button>
             </Stack>
           </form>
         </Stack>
       </Flex>
-      <Flex flex={2}>
-        <Box>
-          <Image
-            alt={'Login Image'}
-            layout="fill"
-            src={'/images/photo-1454165804606-c3d57bc86b40.jpeg'}
-          />
-        </Box>
-      </Flex>
+      <Box flex="2">
+        <Image
+          alt={'Login Image'}
+          layout="responsive"
+          width="1034"
+          height="962"
+          src={'/images/photo-1454165804606-c3d57bc86b40.jpeg'}
+        />
+      </Box>
     </Stack>
   );
 }

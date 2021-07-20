@@ -24,7 +24,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 export default function SignIn() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
 
@@ -44,7 +44,7 @@ export default function SignIn() {
   function onSubmit(e: any) {
     e.preventDefault();
     signIn({
-      variables: { tokenAuthEmail: email, tokenAuthPassword: password },
+      variables: { tokenAuthUsername: username, tokenAuthPassword: password },
     });
   }
 
@@ -70,9 +70,12 @@ export default function SignIn() {
           {error ? <Text>{error.message}</Text> : null}
 
           <form onSubmit={onSubmit}>
-            <FormControl id="email">
-              <FormLabel>ایمیل</FormLabel>
-              <Input onChange={(e) => setEmail(e.target.value)} type="email" />
+            <FormControl id="phone">
+              <FormLabel>شماره موبایل</FormLabel>
+              <Input
+                onChange={(e) => setUsername(e.target.value)}
+                type="phone"
+              />
             </FormControl>
             <FormControl id="password">
               <FormLabel>رمزعبور</FormLabel>

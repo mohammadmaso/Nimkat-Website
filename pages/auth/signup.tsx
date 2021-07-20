@@ -12,24 +12,30 @@ import {
   Text,
   Box,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import TextLogo from '../../componenets/logos/TextLogo';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useFormikContext, Formik, Form, Field, ErrorMessage } from 'formik';
 
 import { useMutation } from '@apollo/client';
 import { SIGN_UP } from '../../graphql/mutations/auth';
+
 import Head from 'next/head';
 
 export default function SingUp() {
   const router = useRouter();
 
+  const [phone, setPhone] = useState('');
+
   const [signUp, { loading, data }] = useMutation(SIGN_UP, {
     onCompleted: (data) => {
-      if (data && data.register.success) {
-        router.push('/auth/verification');
+      if (data && data.registerSms.success) {
+        router.push({
+          pathname: '/auth/verification',
+          query: { phone: phone },
+        });
       }
     },
   });
@@ -53,10 +59,9 @@ export default function SingUp() {
           <Heading fontWeight="medium" fontSize={'xl'}>
             ثبت‌‌نام در آکادمی نیمکت
           </Heading>
-          {data ? <Text>{JSON.stringify(data.register.errors)}</Text> : null}
+          {data ? <Text>{JSON.stringify(data.registerSms.errors)}</Text> : null}
           <Formik
             initialValues={{
-              email: '',
               password1: '',
               password2: '',
               username: '',
@@ -64,12 +69,12 @@ export default function SingUp() {
             onSubmit={(values, { setSubmitting }) => {
               signUp({
                 variables: {
-                  registerEmail: values.email,
-                  registerUsername: values.username,
-                  registerPassword1: values.password1,
-                  registerPassword2: values.password2,
+                  registerSmsUsername: values.username,
+                  registerSmsPassword1: values.password1,
+                  registerSmsPassword2: values.password2,
                 },
               });
+              setPhone(values.username);
               if (data && data.register.success) {
                 setSubmitting(false);
               }
@@ -80,16 +85,8 @@ export default function SingUp() {
                 <Field name="username">
                   {({ field, form }: { field: any; form: any }) => (
                     <FormControl>
-                      <FormLabel>نام‌ کاربری</FormLabel>
-                      <Input id="username" {...field} type="username" />
-                    </FormControl>
-                  )}
-                </Field>
-                <Field name="email">
-                  {({ field, form }: { field: any; form: any }) => (
-                    <FormControl>
-                      <FormLabel>ایمیل</FormLabel>
-                      <Input id="email" {...field} type="email" />
+                      <FormLabel>شماره موبایل</FormLabel>
+                      <Input id="username" {...field} type="phone" />
                     </FormControl>
                   )}
                 </Field>
@@ -109,7 +106,7 @@ export default function SingUp() {
                     </FormControl>
                   )}
                 </Field>
-                <Stack spacing={6}>
+                <Stack spacing={6} mt="2">
                   <Stack
                     direction={{ base: 'column', sm: 'row' }}
                     align={'start'}
@@ -126,6 +123,7 @@ export default function SingUp() {
                     rounded="full"
                     variant={'solid'}
                     type="submit"
+                    isLoading={loading}
                   >
                     ثبت نام
                   </Button>

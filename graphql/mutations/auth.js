@@ -1,17 +1,18 @@
 import { gql } from '@apollo/client';
 
 export const SIGN_IN = gql`
-  mutation Mutation($tokenAuthEmail: String!, $tokenAuthPassword: String!) {
-  tokenAuth(email: $tokenAuthEmail, password: $tokenAuthPassword) {
-    token,
+  mutation Mutation($tokenAuthUsername: String!, $tokenAuthPassword: String!) {
+  tokenAuth(username: $tokenAuthUsername, password: $tokenAuthPassword) {
+    token
     refreshToken
   }
 }
 `;
 
+
 export const SIGN_UP = gql`
-  mutation Mutation($registerEmail: String!, $registerUsername: String!, $registerPassword1: String!, $registerPassword2: String!) {
-  register(email: $registerEmail, username: $registerUsername, password1: $registerPassword1, password2: $registerPassword2) {
+  mutation Mutation($registerSmsPassword1: String!, $registerSmsPassword2: String!, $registerSmsUsername: String!) {
+  registerSms(password1: $registerSmsPassword1, password2: $registerSmsPassword2, username: $registerSmsUsername) {
     success
     errors
   }
@@ -19,9 +20,9 @@ export const SIGN_UP = gql`
 `;
 
 
-export const RESEND_ACTIVATION_EMAIL = gql`
-  mutation Mutation($resendActivationEmailEmail: String!) {
-  resendActivationEmail(email: $resendActivationEmailEmail) {
+export const RESEND_ACTIVATION_SMS = gql`
+  mutation Mutation($resendSmsUsername: String!) {
+  resendSms(username: $resendSmsUsername) {
     success
     errors
   }
@@ -29,14 +30,13 @@ export const RESEND_ACTIVATION_EMAIL = gql`
 `;
 
 
-export const VERIFY_ACCOUNT = gql`
-  mutation Mutation($verifyAccountToken: String!) {
-  verifyAccount(token: $verifyAccountToken) {
+export const VERIFY_ACCOUNT_SMS = gql`
+  mutation Mutation($verifySmsCode: String!, $verifySmsUsername: String!) {
+  verifySms(code: $verifySmsCode, username: $verifySmsUsername) {
     success
     errors
   }
 }
-
 `;
 
 

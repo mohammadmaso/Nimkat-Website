@@ -42,3 +42,40 @@ export const GET_COURSES = gql`query Query {
 }
 `
 
+export const GET_LEARN_COURSE = gql`query Query($courseId: ID!) {
+  course(id: $courseId) {
+    teacher {
+      name
+    }
+    title
+    category {
+      title
+    }
+    video
+    sections {
+      edges {
+        node {
+          id
+          title
+          shortDescription
+          video
+          slug
+          lessons {
+            edges {
+              node {
+                title
+                id
+                video
+                shortDescription
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`
+
+
+

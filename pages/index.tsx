@@ -4,6 +4,7 @@ import LandingCallToAction1 from '../componenets/callToActions/LandingCallToActi
 import BaseLayout from '../layouts/BaseLayout';
 import CategoryListView from '../views/CategoryListView';
 import CourseListView from '../views/CourseListView';
+import InstagramFeedView from '../views/InstagramFeedView';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <LandingCallToAction1 />
       <CategoryListView />
       <CourseListView />
+      <InstagramFeedView />
     </BaseLayout>
   );
 }

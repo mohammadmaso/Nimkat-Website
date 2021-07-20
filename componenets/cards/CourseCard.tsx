@@ -10,6 +10,7 @@ import {
   Image,
   Flex,
   Tag,
+  HStack,
 } from '@chakra-ui/react';
 import { FiFeather } from 'react-icons/fi';
 import CoursePopOver from './CoursePopOver';
@@ -44,51 +45,66 @@ const CategoryCart = (props: Props) => {
           rounded={'md'}
           p={4}
           overflow={'hidden'}
+          minHeight="340"
+          alignContent="space-between"
         >
-          <Box bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
-            <Image alt={props.title} src={props.image} objectFit={'cover'} />
+          <Box>
+            <Box bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+              <Image
+                height="170"
+                alt={props.title}
+                src={props.image}
+                objectFit={'cover'}
+              />
+            </Box>
+            <Tag mb={3} variant="subtle" colorScheme="cyan">
+              {props.category.title}
+            </Tag>
+            <Heading
+              color={useColorModeValue('gray.700', 'white')}
+              fontSize={'md'}
+              fontFamily={'body'}
+            >
+              {props.title}
+            </Heading>
+            <Stack
+              mt={2}
+              direction={'row'}
+              fontSize="sm"
+              spacing={2}
+              align={'center'}
+            >
+              <FiFeather />
+              <Text fontWeight={400}>{props.teacher.name}</Text>
+            </Stack>
           </Box>
-          <Tag mb={3} variant="subtle" colorScheme="cyan">
-            {props.category.title}
-          </Tag>
-          <Heading
-            color={useColorModeValue('gray.700', 'white')}
-            fontSize={'xl'}
-            fontFamily={'body'}
-          >
-            {props.title}
-          </Heading>
-          <Stack
-            mt={2}
-            direction={'row'}
-            fontSize="sm"
-            spacing={2}
-            align={'center'}
-          >
-            <FiFeather />
-            <Text fontWeight={400}>{props.teacher.name}</Text>
-          </Stack>
-
           <Box textAlign="end" alignItems="baseline" textColor="primary">
             {props.price == 0 ? (
               <Text fontSize="md" fontWeight="semibold">
                 رایگان
               </Text>
             ) : props.discountPrice ? (
-              <>
+              <Box>
                 <Text fontSize="xs">تومان</Text>
-                <Text
-                  fontSize="md"
-                  color="gray.400"
-                  as="s"
-                  fontWeight="semibold"
-                >
-                  {props.price.toLocaleString('ar-EG')}
-                </Text>
-                <Text fontSize="large" color="red.400" fontWeight="semibold">
-                  {props.discountPrice.toLocaleString('ar-EG')}
-                </Text>
-              </>
+                <Box display="inline-flex" alignItems="center">
+                  <Text
+                    fontSize="md"
+                    color="gray.400"
+                    as="s"
+                    fontWeight="semibold"
+                  >
+                    {props.price.toLocaleString('ar-EG')}
+                  </Text>
+                  <Text
+                    mr="2"
+                    fontSize="large"
+                    color="red.400"
+                    fontWeight="semibold"
+                  >
+                    {props.discountPrice.toLocaleString('ar-EG')}
+                  </Text>
+                </Box>
+              </Box>
             ) : (
               <>
                 <Text fontSize="xs">تومان</Text>
