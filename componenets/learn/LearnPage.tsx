@@ -50,7 +50,9 @@ const LearnPage = (props: Props) => {
         >
           فهرست مطالب
         </Button>
-        <Text fontWeight="semibold">{props.sidebarData.course.title}</Text>
+        <Text fontWeight="semibold">
+          {props.sidebarData.secureCourse.title}
+        </Text>
         <Button
           rightIcon={<MoonIcon w={4} h={4} />}
           colorScheme="telegram"
@@ -62,7 +64,7 @@ const LearnPage = (props: Props) => {
         </Button>
       </Flex>
       <LearnContent
-        video={props.sidebarData.course.video}
+        video={props.sidebarData.secureCourse.video}
         sideBarLoading={props.sideBarLoading}
         sideBarError={props.sideBarError}
       />

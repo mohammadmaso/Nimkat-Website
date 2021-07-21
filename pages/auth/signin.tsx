@@ -6,7 +6,6 @@ import {
   FormLabel,
   Heading,
   Input,
-  Link,
   Stack,
   Center,
   Text,
@@ -17,6 +16,7 @@ import React, { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import TextLogo from '../../componenets/logos/TextLogo';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { useMutation } from '@apollo/client';
 import { SIGN_IN } from '../../graphql/mutations/auth';
@@ -54,14 +54,7 @@ export default function SignIn() {
         <title>نیمکت آکادمی | ورود</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Flex
-        p={8}
-        flex="1"
-        align={'center'}
-        justify={'center'}
-        zIndex={100}
-        bgColor="white"
-      >
+      <Flex p={8} flex="1" align={'center'} justify={'center'} zIndex={100}>
         <Stack spacing={4} w={'full'} maxW={'md'}>
           <TextLogo height="100" width="200" />
           <Heading fontWeight="medium" fontSize={'xl'}>
@@ -91,8 +84,8 @@ export default function SignIn() {
                 justify={'space-between'}
                 mt="2"
               >
-                <Checkbox>بخاطر سپاری ورود</Checkbox>
-                <Link color={'primary'}>فراموشی رمز عبور</Link>
+                <Link href="/auth/signup">ثبت نام</Link>
+                <Link href="/auth/forgot-password">فراموشی رمز عبور</Link>
               </Stack>
               <Button
                 colorScheme="primary"

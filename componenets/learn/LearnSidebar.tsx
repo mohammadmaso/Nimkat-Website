@@ -41,16 +41,18 @@ export const LearnSidebar = (props: Props) => {
 
           <DrawerHeader>
             <Text mb={2} fontWeight="semibold">
-              {props.sidebarData.course.title}
+              {props.sidebarData.secureCourse.title}
             </Text>
             <Divider />
           </DrawerHeader>
           <DrawerBody>
             <VStack spacing={1} align="flex-start">
               {props.sidebarData
-                ? props.sidebarData.course.sections.edges.map((item: any) => (
-                    <LearnSidbarSubMenu key={item.node.id} {...item.node} />
-                  ))
+                ? props.sidebarData.secureCourse.sections.edges.map(
+                    (item: any) => (
+                      <LearnSidbarSubMenu key={item.node.id} {...item.node} />
+                    )
+                  )
                 : null}
             </VStack>
           </DrawerBody>

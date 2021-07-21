@@ -17,6 +17,7 @@ import {
 import { onError } from 'apollo-link-error';
 import { fromPromise, ApolloLink } from 'apollo-link';
 import { REFRESH_TOKEN } from '../graphql/mutations/auth';
+import Router from 'next/router';
 
 import { setContext } from '@apollo/client/link/context';
 
@@ -37,6 +38,7 @@ const errorLink = onError(
             return fromPromise(
               getNewToken().catch((error) => {
                 // Handle token refresh errors e.g clear stored tokens, redirect to login
+                Router.push('/signin');
                 return;
               })
             )

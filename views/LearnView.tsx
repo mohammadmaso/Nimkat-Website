@@ -18,9 +18,9 @@ const LearnView = (props: Props) => {
   } = useQuery(GET_LEARN_COURSE, {
     variables: { courseId: props.id },
   });
-  // console.log(sideBarError, sideBarData);
   if (sidebarLoading) return <Spinner mt={3} color="primary" />;
-
+  if (sideBarError) return <p>خطا</p>;
+  if (!sideBarData) return <p>یافت نشد</p>;
   return (
     <div>
       <LearnPage

@@ -46,7 +46,7 @@ const LearnCard = (props: Props) => {
     >
       <Center py={6}>
         <Box
-          w={'full'}
+          w={'sm'}
           bg={useColorModeValue('white', 'gray.900')}
           boxShadow={'md'}
           rounded={'md'}
