@@ -22,7 +22,7 @@ const LandingBanner1 = (props: Props) => {
           <Button
             rounded="full"
             size="lg"
-            bgColor="primary"
+            colorSchema="primary"
             textColor="white"
             leftIcon={<FiSearch />}
             width="sm"

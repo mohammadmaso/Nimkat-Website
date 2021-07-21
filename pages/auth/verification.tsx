@@ -31,6 +31,8 @@ export default function SignIn() {
 
   const [result, setResult] = useState('');
   const router = useRouter();
+  const [displayResend, setDisplayResend] = useState(true);
+  const [count, setCount] = useState(0);
 
   const [
     verify,
@@ -69,7 +71,22 @@ export default function SignIn() {
     });
   }
 
+  function handleResendButton() {
+    setDisplayResend(false);
+    setCount(60);
+    var counter = setInterval(timer, 1000);
+    function timer() {
+      setCount((prevCount) => prevCount - 1);
+      if (count <= 0) {
+        clearInterval(counter);
+        setDisplayResend(true);
+        return;
+      }
+    }
+  }
+
   function handleResendCode(e: any) {
+    // handleResendButton();
     setResult('');
     e.preventDefault();
     resend({
@@ -109,7 +126,7 @@ export default function SignIn() {
               >
                 <Button
                   spinner={<BeatLoader size={8} color="#215970" />}
-                  color={'primary'}
+                  colorScheme="primary"
                   isLoading={resendLoading}
                   onClick={handleResendCode}
                   variant="link"
@@ -117,11 +134,11 @@ export default function SignIn() {
                 >
                   ارسال دوباره کد
                 </Button>
+
                 <Text>{result}</Text>
               </Stack>
               <Button
-                bgColor="primary"
-                color="white"
+                colorScheme="primary"
                 rounded="full"
                 variant={'solid'}
                 type="submit"

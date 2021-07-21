@@ -22,8 +22,8 @@ const LandingCallToAction1 = (props: Props) => {
           <Button
             rounded="full"
             size="lg"
-            bgColor="primary"
-            textColor="white"
+            colorScheme="primary"
+            variant="solid"
             leftIcon={<FiSearch />}
             width="sm"
           >

@@ -11,9 +11,11 @@ import {
   Flex,
   Tag,
   HStack,
+  Progress,
 } from '@chakra-ui/react';
 import { FiFeather } from 'react-icons/fi';
 import CoursePopOver from './CoursePopOver';
+import Link from 'next/link';
 
 interface Props {
   id: string;
@@ -34,10 +36,15 @@ interface Props {
   video: string;
 }
 
-const CategoryCart = (props: Props) => {
+const LearnCard = (props: Props) => {
   return (
-    <CoursePopOver {...props}>
-      <Center py={6} m={3}>
+    <Link
+      href={{
+        pathname: '/me/learn/[id]',
+        query: { id: props.id },
+      }}
+    >
+      <Center py={6}>
         <Box
           w={'full'}
           bg={useColorModeValue('white', 'gray.900')}
@@ -78,46 +85,16 @@ const CategoryCart = (props: Props) => {
               <Text fontWeight={400}>{props.teacher.name}</Text>
             </Stack>
           </Box>
-          <Box textAlign="end" alignItems="baseline" colorSchema="primary">
-            {props.price == 0 ? (
-              <Text fontSize="md" fontWeight="semibold">
-                رایگان
-              </Text>
-            ) : props.discountPrice ? (
-              <Box>
-                <Text fontSize="xs">تومان</Text>
-                <Box display="inline-flex" alignItems="center">
-                  <Text
-                    fontSize="md"
-                    color="gray.400"
-                    as="s"
-                    fontWeight="semibold"
-                  >
-                    {props.price.toLocaleString('ar-EG')}
-                  </Text>
-                  <Text
-                    mr="2"
-                    fontSize="large"
-                    color="red.400"
-                    fontWeight="semibold"
-                  >
-                    {props.discountPrice.toLocaleString('ar-EG')}
-                  </Text>
-                </Box>
-              </Box>
-            ) : (
-              <>
-                <Text fontSize="xs">تومان</Text>
-                <Text fontSize="md" fontWeight="semibold">
-                  {props.price.toLocaleString('ar-EG')}
-                </Text>
-              </>
-            )}
+          <Box>
+            <Text mt={2} mb={2} fontWeight="semibold" textColor="green">
+              پیشرفت دوره
+            </Text>
+            <Progress hasStripe value={64} colorScheme="green" />
           </Box>
         </Box>
       </Center>
-    </CoursePopOver>
+    </Link>
   );
 };
 
-export default CategoryCart;
+export default LearnCard;

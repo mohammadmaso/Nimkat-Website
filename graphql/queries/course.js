@@ -42,8 +42,8 @@ export const GET_COURSES = gql`query Query {
 }
 `
 
-export const GET_LEARN_COURSE = gql`query Query($courseId: ID!) {
-  course(id: $courseId) {
+export const GET_LEARN_COURSE = gql`query Query($courseId: String!) {
+  secureCourse(id: $courseId) {
     teacher {
       name
     }
@@ -71,6 +71,29 @@ export const GET_LEARN_COURSE = gql`query Query($courseId: ID!) {
             }
           }
         }
+      }
+    }
+  }
+}
+`
+
+
+
+export const GET_MY_COURSES = gql`
+query Query {
+  myCourses {
+    edges {
+      node {
+        id
+        teacher {
+          name
+        }
+        title
+        category {
+          title
+        }
+        image
+        language
       }
     }
   }

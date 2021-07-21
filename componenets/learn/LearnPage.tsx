@@ -34,6 +34,7 @@ const LearnPage = (props: Props) => {
         borderRadius="md"
         justify="space-between"
         align="center"
+        p="2"
       >
         <Button
           // position="fixed"

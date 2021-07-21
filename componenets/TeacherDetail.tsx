@@ -100,7 +100,7 @@ const TeacherDetail = (props: any) => {
           ))}
         </Stack>
       </Center>
-      <Tabs textColor="primary" align="center">
+      <Tabs colorSchema="primary" align="center">
         <TabList>
           <Tab>معرفی و رزومه</Tab>
           <Tab>دوره‌ها</Tab>

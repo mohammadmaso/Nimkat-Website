@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@chakra-ui/icons';
+import { ChevronDownIcon, MoonIcon } from '@chakra-ui/icons';
 import {
   Avatar,
   Flex,
@@ -8,6 +8,7 @@ import {
   MenuList,
   MenuItem,
   Button,
+  useColorMode,
 } from '@chakra-ui/react';
 
 import { FiLogOut, FiUser, FiBookOpen } from 'react-icons/fi';
@@ -19,6 +20,8 @@ import Link from 'next/link';
 interface Props {}
 
 const NavProfile = (props: any) => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <div>
       <Menu>
@@ -46,7 +49,12 @@ const NavProfile = (props: any) => {
           <Link href="/me/profile">
             <MenuItem icon={<FiUser />}>حساب کاربری</MenuItem>
           </Link>
-          <MenuItem icon={<FiBookOpen />}>دوره‌های من</MenuItem>
+          <Link href="/me/learn">
+            <MenuItem icon={<FiBookOpen />}>دوره‌های من</MenuItem>
+          </Link>
+          <MenuItem onClick={toggleColorMode} icon={<MoonIcon />}>
+            حالت شب
+          </MenuItem>
           <MenuItem onClick={props.signOut} icon={<FiLogOut />}>
             خروج
           </MenuItem>

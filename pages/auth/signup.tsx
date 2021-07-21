@@ -118,8 +118,7 @@ export default function SingUp() {
                     </Link>
                   </Stack>
                   <Button
-                    bgColor="primary"
-                    color="white"
+                    colorScheme="primary"
                     rounded="full"
                     variant={'solid'}
                     type="submit"

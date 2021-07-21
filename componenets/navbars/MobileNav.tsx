@@ -48,7 +48,7 @@ export const MobileNav = ({
           </DrawerBody>
           <Divider />
 
-          <DrawerFooter textColor="primary" justifyContent="center">
+          <DrawerFooter colorSchema="primary" justifyContent="center">
             <HStack spacing="10px">
               <IoLogoSoundcloud />
               <IoLogoInstagram />

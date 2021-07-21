@@ -53,9 +53,9 @@ const CoursePopOver = (props: Props) => {
               <Text> {props.title}</Text>
               <Button
                 size="sm"
+                variant="solid"
                 rounded="full"
-                bgColor="primary"
-                textColor="white"
+                colorScheme="primary"
               >
                 ثبت‌نام
               </Button>

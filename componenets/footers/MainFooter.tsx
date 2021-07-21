@@ -37,7 +37,7 @@ export default function LargeWithNewsletter() {
           <Box>
             <Stack>
               <TextLogo width="140" height="50" />
-              <Text fontSize="sm" textColor="primary">
+              <Text fontSize="sm" colorSchema="primary">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                 استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله
                 در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
@@ -46,7 +46,7 @@ export default function LargeWithNewsletter() {
             </Stack>
           </Box>
           <Flex>
-            <Stack fontSize="sm" textColor="primary">
+            <Stack fontSize="sm" colorSchema="primary">
               <Link>دوره‌ها</Link>
               <Link>اساتید</Link>
               <Link>درباره‌ی نیمکت آکادمی</Link>
@@ -54,7 +54,7 @@ export default function LargeWithNewsletter() {
               <Link>پشتیبانی</Link>
             </Stack>
             <Spacer />
-            <Stack fontSize="sm" textColor="primary">
+            <Stack fontSize="sm" colorSchema="primary">
               <Link> سیاست حفظ حریم خصوصی</Link>
               <Link>قوانین و مقررات</Link>
               <Link>فرصت شغلی</Link>
@@ -85,7 +85,7 @@ export default function LargeWithNewsletter() {
               <Grid
                 templateColumns="repeat(5, 1fr)"
                 gap={1}
-                textColor="primary"
+                colorSchema="primary"
                 fontSize="xl"
               >
                 <AiOutlineTwitter />
@@ -93,7 +93,7 @@ export default function LargeWithNewsletter() {
                 <AiOutlineYoutube />
                 <AiOutlineInstagram />
               </Grid>
-              <Text textColor="primary">
+              <Text colorSchema="primary">
                 {' '}
                 تمامی حقوق برای اکادمی نیمکت محفوظ است. | ۱۴۰۰{' '}
               </Text>

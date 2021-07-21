@@ -95,8 +95,7 @@ export default function SignIn() {
                 <Link color={'primary'}>فراموشی رمز عبور</Link>
               </Stack>
               <Button
-                bgColor="primary"
-                color="white"
+                colorScheme="primary"
                 rounded="full"
                 variant={'solid'}
                 type="submit"
