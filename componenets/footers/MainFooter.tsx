@@ -31,8 +31,8 @@ import TextLogo from '../logos/TextLogo';
 
 export default function LargeWithNewsletter() {
   return (
-    <Box boxShadow="2xl">
-      <Container as={Stack} maxW={'7xl'} py="10">
+    <Box boxShadow="inner" bgColor={useColorModeValue('gray.100', 'gray.900')}>
+      <Container as={Stack} maxW={'7xl'} py="10" colorScheme="primary">
         <SimpleGrid columns={{ base: 1, sm: 1, md: 3 }} spacing={8}>
           <Box>
             <Stack>

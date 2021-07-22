@@ -12,31 +12,15 @@ import {
   Tag,
   HStack,
   Progress,
+  Badge,
 } from '@chakra-ui/react';
 import { FiFeather } from 'react-icons/fi';
 import CoursePopOver from './CoursePopOver';
 import Link from 'next/link';
 
-interface Props {
-  id: string;
-  title: string;
-  shortDescription: string;
-  category: {
-    title: string;
-  };
-  teacher: {
-    name: string;
-  };
-  image: string;
-  language: string;
-  price: number;
-  discountPrice: number;
-  slug: string;
-  createdAt: string;
-  video: string;
-}
+interface Props {}
 
-const LearnCard = (props: Props) => {
+const LearnCard = (props: any) => {
   return (
     <Link
       href={{
@@ -52,7 +36,6 @@ const LearnCard = (props: Props) => {
           rounded={'md'}
           p={4}
           overflow={'hidden'}
-          minHeight="340"
           alignContent="space-between"
         >
           <Box>
@@ -65,14 +48,14 @@ const LearnCard = (props: Props) => {
               />
             </Box>
             <Tag mb={3} variant="subtle" colorScheme="cyan">
-              {props.category.title}
+              {props.course.category.title}
             </Tag>
             <Heading
               color={useColorModeValue('gray.700', 'white')}
               fontSize={'md'}
               fontFamily={'body'}
             >
-              {props.title}
+              {props.course.title}
             </Heading>
             <Stack
               mt={2}
@@ -82,14 +65,15 @@ const LearnCard = (props: Props) => {
               align={'center'}
             >
               <FiFeather />
-              <Text fontWeight={400}>{props.teacher.name}</Text>
+              <Text fontWeight={400}>{props.course.teacher.name}</Text>
             </Stack>
           </Box>
           <Box>
-            <Text mt={2} mb={2} fontWeight="semibold" textColor="green">
-              پیشرفت دوره
-            </Text>
-            <Progress hasStripe value={64} colorScheme="green" />
+            {props.paymentStatus ? (
+              <Badge colorScheme="green">پرداخت شده</Badge>
+            ) : (
+              <Badge colorScheme="red">پرداخت نشده</Badge>
+            )}
           </Box>
         </Box>
       </Center>

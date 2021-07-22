@@ -13,6 +13,7 @@ import {
   createHttpLink,
   InMemoryCache,
   ApolloProvider,
+  from,
 } from '@apollo/client';
 import { onError } from 'apollo-link-error';
 import { fromPromise, ApolloLink } from 'apollo-link';
@@ -78,10 +79,21 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+const languageMiddleware = new ApolloLink((operation, forward) => {
+  operation.setContext(({ headers = {} }) => ({
+    headers: {
+      ...headers,
+      'Accept-Language': 'fa-IR,fa;q=0.9,en-IR;q=0.8,en;q=0.7',
+    },
+  }));
+
+  return forward(operation);
+});
+
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   // to use errorLink functinality
-  // link: ApolloLink.from([errorLink, authLink, httpLink]),
+  //link: from([errorLink, authLink, httpLink, languageMiddleware]),
   cache: new InMemoryCache(),
 });
 

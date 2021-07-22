@@ -32,7 +32,6 @@ const NavBarUserView = (props: Props) => {
   const router = useRouter();
 
   const { loading, error, data } = useQuery(ME);
-  console.log(data);
 
   const signOut = () => {
     localStorage.removeItem('token');

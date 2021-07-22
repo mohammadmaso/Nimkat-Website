@@ -11,7 +11,7 @@ const MyLearns = (props: any) => {
         <Heading colorScheme="primary" size="lg" fontWeight="400">
           دوره‌های من
         </Heading>
-        {props.myCourses.edges.map((item: any) => (
+        {props.myBoughtCourses.edges.map((item: any) => (
           <LearnCard key={item.node.id} {...item.node} />
         ))}
       </div>

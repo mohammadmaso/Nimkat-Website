@@ -14,7 +14,7 @@ const MyLearnsView = (props: Props) => {
   const { loading, error, data } = useQuery(GET_MY_COURSES);
 
   if (loading) return <Spinner mt={3} color="primary" />;
-  if (data.myCourses.edges.length == 0) return <EmptyResult />;
+  if (data.myBoughtCourses.edges.length == 0) return <EmptyResult />;
   return (
     <div>
       <MyLearns {...data} />

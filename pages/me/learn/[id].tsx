@@ -6,10 +6,9 @@ import LearnView from '../../../views/LearnView';
 
 export default function Learn() {
   const router = useRouter();
-  console.log(router.pathname);
   return (
     <BaseLayout title="آکادمی نیمکت">
-      <LearnView id={router.query.id} />
+      <LearnView id={router.query.id} lesson={router.query.lesson} />
     </BaseLayout>
   );
 }
