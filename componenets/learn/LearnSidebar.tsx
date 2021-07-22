@@ -24,15 +24,9 @@ import {
 } from 'react-icons/io5';
 import { LearnSidbarSubMenu } from './LearnSidbarSubMenu';
 
-interface Props {
-  sidebarData: any;
-  sideBarLoading: any;
-  sideBarError: any;
-  isOpen: any;
-  onClose: any;
-}
+interface Props {}
 
-export const LearnSidebar = (props: Props) => {
+export const LearnSidebar = (props: any) => {
   return (
     <Drawer isOpen={props.isOpen} placement="right" onClose={props.onClose}>
       <DrawerOverlay>
@@ -41,18 +35,20 @@ export const LearnSidebar = (props: Props) => {
 
           <DrawerHeader>
             <Text mb={2} fontWeight="semibold">
-              {props.sidebarData.secureCourse.title}
+              {props.course.title}
             </Text>
             <Divider />
           </DrawerHeader>
           <DrawerBody>
             <VStack spacing={1} align="flex-start">
-              {props.sidebarData
-                ? props.sidebarData.secureCourse.sections.edges.map(
-                    (item: any) => (
-                      <LearnSidbarSubMenu key={item.node.id} {...item.node} />
-                    )
-                  )
+              {props.course
+                ? props.course.sections.edges.map((item: any) => (
+                    <LearnSidbarSubMenu
+                      key={item.node.id}
+                      {...item.node}
+                      completeLessonData={props.completeLessonData}
+                    />
+                  ))
                 : null}
             </VStack>
           </DrawerBody>
@@ -61,9 +57,13 @@ export const LearnSidebar = (props: Props) => {
               <Divider />
 
               <Text mt={2} mb={2} fontWeight="semibold" textColor="green">
-                پیشرفت دوره
+                پیشرفت دوره % {props.complitnessPercent}
               </Text>
-              <Progress hasStripe value={64} colorScheme="green" />
+              <Progress
+                hasStripe
+                value={props.complitnessPercent}
+                colorScheme="green"
+              />
             </Box>
           </DrawerFooter>
         </DrawerContent>
