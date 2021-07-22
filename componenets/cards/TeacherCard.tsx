@@ -69,7 +69,7 @@ const TeacherCard = (props: Props) => {
               alt={props.title}
             />
             <Text fontWeight={600} fontSize="large" color={'primary'} p="1">
-              {props.user.firstName + ' ' + props.user.lastName}
+              {props.name}
             </Text>
             <Text fontWeight={300} color={'primary'} p="1">
               {props.title}
