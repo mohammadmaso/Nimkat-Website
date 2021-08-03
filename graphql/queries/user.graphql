@@ -1,0 +1,51 @@
+query Me {
+  me {
+    firstName
+    lastName
+    email
+    avatar
+  }
+}
+
+query MeDetail {
+  me {
+    firstName
+    lastName
+    email
+    avatar
+    verified
+    lastLogin
+    username
+    dateJoined
+    profilemodel {
+      about
+    }
+  }
+}
+
+query MeBoughtCourses {
+  me {
+    verified
+    boughtcoursesmodelSet {
+      edges {
+        node {
+          refId
+          paymentStatus
+          createdAt
+          course {
+            id
+            slug
+            title
+            shortDescription
+            image
+            category {
+              title
+            }
+            price
+            language
+          }
+        }
+      }
+    }
+  }
+}

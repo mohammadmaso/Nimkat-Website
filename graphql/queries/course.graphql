@@ -1,0 +1,102 @@
+query AllCategories {
+  allCourseCategories {
+    edges {
+      node {
+        id
+        title
+        shortDescription
+        image
+      }
+    }
+  }
+}
+
+query AllCourse {
+  allCourses {
+    edges {
+      node {
+        id
+        title
+        createdAt
+        shortDescription
+        category {
+          title
+        }
+        image
+        language
+        price
+        discountPrice
+        slug
+        teacher {
+          name
+        }
+      }
+    }
+  }
+}
+
+query SecureBougthCourse($secureBougthCourseId: String) {
+  secureBougthCourse(id: $secureBougthCourseId) {
+    completeLessons {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+    course {
+      teacher {
+        name
+      }
+      title
+      category {
+        title
+      }
+      video
+      sections {
+        edges {
+          node {
+            id
+            title
+            shortDescription
+            video
+            slug
+            lessons {
+              edges {
+                node {
+                  title
+                  id
+                  video
+                  shortDescription
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query MyBoughtCourses {
+  myBoughtCourses {
+    edges {
+      node {
+        id
+        paymentStatus
+        course {
+          id
+          teacher {
+            name
+          }
+          title
+          category {
+            title
+          }
+          image
+          language
+        }
+      }
+    }
+  }
+}

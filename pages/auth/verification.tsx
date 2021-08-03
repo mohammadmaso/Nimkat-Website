@@ -12,11 +12,11 @@ import {
   Text,
   Box,
   Spinner,
+  Image
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import TextLogo from '../../componenets/logos/TextLogo';
-import Image from 'next/image';
 import BeatLoader from 'react-spinners/BeatLoader';
 
 import { useMutation } from '@apollo/client';
@@ -143,15 +143,13 @@ export default function SignIn() {
           </form>
         </Stack>
       </Flex>
-      <Box flex="2">
+      <Flex flex="1">
         <Image
           alt={'Login Image'}
-          layout="responsive"
-          width="1034"
-          height="962"
+          objectFit={'cover'}
           src={'/images/photo-1454165804606-c3d57bc86b40.jpeg'}
         />
-      </Box>
+      </Flex>
     </Stack>
   );
 }

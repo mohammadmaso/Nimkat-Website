@@ -13,11 +13,11 @@ import {
   Box,
   useDisclosure,
   Link as ChakraLink,
+  Image
 } from '@chakra-ui/react';
 import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import TextLogo from '../../componenets/logos/TextLogo';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useFormikContext, Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -173,15 +173,13 @@ export default function SingUp() {
             </Formik>
           </Stack>
         </Flex>
-        <Box flex="2">
-          <Image
-            alt={'Login Image'}
-            layout="responsive"
-            width="1034"
-            height="962"
-            src={'/images/photo-1454165804606-c3d57bc86b40.jpeg'}
-          />
-        </Box>
+        <Flex flex="1">
+        <Image
+          alt={'Login Image'}
+          objectFit={'cover'}
+          src={'/images/photo-1454165804606-c3d57bc86b40.jpeg'}
+        />
+      </Flex>
       </Stack>
       <TermOfUseModal {...modal} />
     </>

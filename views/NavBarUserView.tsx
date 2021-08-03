@@ -25,6 +25,7 @@ import { useQuery } from '@apollo/client';
 import { ME } from '../graphql/queries/user';
 import Link from 'next/link';
 import NavProfile from '../componenets/navbars/NavProfile';
+import NavButtons from '../componenets/navbars/NavButtons';
 
 interface Props {}
 
@@ -41,6 +42,10 @@ const NavBarUserView = (props: Props) => {
 
   if (loading) {
     return null;
+  }
+
+  if (data.me == null) {
+    return <NavButtons/>;
   }
 
   return (

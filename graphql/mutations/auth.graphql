@@ -1,0 +1,64 @@
+mutation TokenAuth($tokenAuthUsername: String!, $tokenAuthPassword: String!) {
+  tokenAuth(username: $tokenAuthUsername, password: $tokenAuthPassword) {
+    token
+    refreshToken
+  }
+}
+
+mutation RegisterSms(
+  $registerSmsPassword1: String!
+  $registerSmsPassword2: String!
+  $registerSmsUsername: String!
+) {
+  registerSms(
+    password1: $registerSmsPassword1
+    password2: $registerSmsPassword2
+    username: $registerSmsUsername
+  ) {
+    success
+    errors
+  }
+}
+
+mutation ResendSms($resendSmsUsername: String!) {
+  resendSms(username: $resendSmsUsername) {
+    success
+    errors
+  }
+}
+
+mutation VerifySms($verifySmsCode: String!, $verifySmsUsername: String!) {
+  verifySms(code: $verifySmsCode, username: $verifySmsUsername) {
+    success
+    errors
+  }
+}
+
+mutation refreshToken($refreshTokenRefreshToken: String!) {
+  refreshToken(refreshToken: $refreshTokenRefreshToken) {
+    token
+    refreshToken
+  }
+}
+
+mutation PasswordReset(
+  $passwordResetToken: String!
+  $passwordResetNewPassword1: String!
+  $passwordResetNewPassword2: String!
+) {
+  passwordReset(
+    token: $passwordResetToken
+    newPassword1: $passwordResetNewPassword1
+    newPassword2: $passwordResetNewPassword2
+  ) {
+    success
+    errors
+  }
+}
+
+mutation Mutation($sendPasswordResetEmailEmail: String!) {
+  sendPasswordResetEmail(email: $sendPasswordResetEmailEmail) {
+    success
+    errors
+  }
+}

@@ -1,0 +1,12 @@
+mutation CompleteLesson(
+  $completeLessonCourseId: String!
+  $completeLessonLessonId: String!
+) {
+  completeLesson(
+    boughtCourseId: $completeLessonCourseId
+    lessonId: $completeLessonLessonId
+  ) {
+    success
+    complete
+  }
+}

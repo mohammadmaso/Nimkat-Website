@@ -12,7 +12,6 @@ export default function Home() {
       <LandingCallToAction1 />
       <CategoryListView />
       <CourseListView />
-      <InstagramFeedView />
     </BaseLayout>
   );
 }

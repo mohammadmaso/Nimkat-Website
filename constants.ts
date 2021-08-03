@@ -1,1 +1,1 @@
-export const appName = "Nimkat Academy"
+export const appName = "آکادمی نیمکت"
