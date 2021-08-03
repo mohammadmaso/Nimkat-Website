@@ -1,12 +1,10 @@
-import { useQuery } from '@apollo/client';
-import { GET_CATEGORIES } from '../graphql/queries/course';
-
 import React from 'react';
 import { Spinner } from '@chakra-ui/react';
 import CategoryCarousal from '../componenets/carousals/CategoryCarousal';
+import { useAllCategoriesQuery } from '../graphql/generated/types';
 
 const CategoryListView = () => {
-  const { loading, error, data } = useQuery(GET_CATEGORIES);
+  const { loading, error, data } = useAllCategoriesQuery();
   if (loading) return <Spinner mt={3} color="primary" />;
 
   return <CategoryCarousal {...data} />;

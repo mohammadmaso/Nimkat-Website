@@ -21,23 +21,22 @@ import { FiLogOut, FiUser, FiBookOpen } from 'react-icons/fi';
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { useQuery } from '@apollo/client';
-import { ME } from '../graphql/queries/user';
 import Link from 'next/link';
 import NavProfile from '../componenets/navbars/NavProfile';
 import NavButtons from '../componenets/navbars/NavButtons';
+import { useMeQuery } from '../graphql/generated/types';
 
 interface Props {}
 
 const NavBarUserView = (props: Props) => {
   const router = useRouter();
 
-  const { loading, error, data } = useQuery(ME);
+  const { loading, error, data } = useMeQuery();
 
   const signOut = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('refresh-token');
-    router.push('/landing');
+    router.push('/');
   };
 
   if (loading) {
@@ -45,7 +44,7 @@ const NavBarUserView = (props: Props) => {
   }
 
   if (data.me == null) {
-    return <NavButtons/>;
+    return <NavButtons />;
   }
 
   return (

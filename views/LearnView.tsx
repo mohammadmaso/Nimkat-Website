@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import LearnPage from '../componenets/learn/LearnPage';
 
-import { useQuery } from '@apollo/client';
-
-import { GET_LEARN_COURSE } from '../graphql/queries/course';
 import { Spinner } from '@chakra-ui/react';
+import { useSecureBougthCourseQuery } from '../graphql/generated/types';
 
 interface Props {
-  id: string | string[] | undefined;
+  id: string;
   lesson: string | string[] | undefined;
 }
 
 const LearnView = (props: Props) => {
   const [percent, setPercent] = useState(0);
-  const { loading, error, data } = useQuery(GET_LEARN_COURSE, {
+  const { loading, error, data } = useSecureBougthCourseQuery({
     variables: { secureBougthCourseId: props.id },
     onCompleted: (data) => {
       setPercent(
