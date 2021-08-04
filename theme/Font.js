@@ -72,11 +72,11 @@ This set of fonts are used in this project under the license: (.....)
 	font-family: iranyekan;
 	font-style: normal;
 	font-weight: 300;
-	src: url('fonts/IranyekanWeb/eot/iranyekanweblight.eot');
-	src: url('fonts/IranyekanWeb/eot/iranyekanweblight.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
-		 url('fonts/IranyekanWeb/woff/iranyekanweblight.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-		 url('fonts/IranyekanWeb/woff2/iranyekanweblight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
-		 url('fonts/IranyekanWeb/ttf/iranyekanweblight.ttf') format('truetype');
+	src: url('fonts/IranyekanWeb/eot/IRANYekanWebLight.eot');
+	src: url('fonts/IranyekanWeb/eot/IRANYekanWebLight.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('fonts/IranyekanWeb/woff/IRANYekanWebLight.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('fonts/IranyekanWeb/woff2/IRANYekanWebLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('fonts/IranyekanWeb/ttf/IRANYekanWebLight.ttf') format('truetype');
 }
 
 @font-face {
