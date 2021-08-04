@@ -5,8 +5,8 @@ import { Spinner } from '@chakra-ui/react';
 import { useSecureBougthCourseQuery } from '../graphql/generated/types';
 
 interface Props {
-  id: string;
-  lesson: string;
+  id: any;
+  lesson: any;
 }
 
 const LearnView = (props: Props) => {

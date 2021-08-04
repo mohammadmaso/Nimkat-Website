@@ -7,7 +7,7 @@ import { useTeacherDetailQuery } from '../graphql/generated/types';
 import { GET_TEACHER_BY_ID } from '../graphql/queries/teacher';
 
 interface Props {
-  id: string;
+  id: any;
 }
 
 const TheacherDetailView = (props: Props) => {
