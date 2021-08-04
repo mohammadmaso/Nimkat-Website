@@ -13,9 +13,7 @@ export default function CallToAction2() {
       w={'full'}
       h={'30vh'}
       rounded="md"
-      backgroundImage={
-        'url(https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80)'
-      }
+      backgroundImage={'url(/images/photo-1554415707-6e8cfc93fe23.jpeg)'}
       backgroundSize={'cover'}
       backgroundPosition={'center center'}
       marginBottom={5}
