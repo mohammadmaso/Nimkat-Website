@@ -6,7 +6,7 @@ import { useSecureBougthCourseQuery } from '../graphql/generated/types';
 
 interface Props {
   id: string;
-  lesson: string | string[] | undefined;
+  lesson: string;
 }
 
 const LearnView = (props: Props) => {
