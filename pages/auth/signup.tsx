@@ -160,6 +160,7 @@ export default function SingUp() {
                       rounded="full"
                       variant={'outline'}
                       leftIcon={<FcGoogle />}
+                      disabled
                     >
                       <Center>
                         <Text>ثبت‌نام با گوگل</Text>

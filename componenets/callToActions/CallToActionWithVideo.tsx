@@ -43,11 +43,11 @@ export default function CallToActionWithVideo() {
                 zIndex: -1,
               }}
             >
-              نمی‌دونی کجا بری؟
+              یادگیری برای همه
             </Text>
             <br />
             <Text as={'span'} color={'primary.500'}>
-              ما می‌دونیم..
+              دوره‌ها جامع نیمکت آکادمی
             </Text>
           </Heading>
           <Text color={'gray.500'}>
@@ -68,10 +68,10 @@ export default function CallToActionWithVideo() {
               px={6}
               colorScheme={'primary'}
             >
-              سفرساز
+              دوره‌ها
             </Button>
             <Button rounded={'full'} size={'lg'} fontWeight={'normal'} px={6}>
-              گشتن میان سفرنامه‌ها
+              اساتید
             </Button>
           </Stack>
         </Stack>
@@ -118,9 +118,7 @@ export default function CallToActionWithVideo() {
               align={'center'}
               w={'100%'}
               h={'100%'}
-              src={
-                'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80'
-              }
+              src={'/images/thought-catalog-505eectW54k-unsplash.jpeg'}
             />
           </Box>
         </Flex>

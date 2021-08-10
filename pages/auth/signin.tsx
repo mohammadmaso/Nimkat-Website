@@ -11,7 +11,7 @@ import {
   Text,
   Box,
   Spinner,
-  Image
+  Image,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
@@ -102,6 +102,7 @@ export default function SignIn() {
                 rounded="full"
                 variant={'outline'}
                 leftIcon={<FcGoogle />}
+                disabled
               >
                 <Center>
                   <Text>ورود با گوگل</Text>
