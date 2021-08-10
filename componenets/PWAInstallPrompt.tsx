@@ -60,7 +60,7 @@ export function PWAInstallPrompt() {
         >
           <Stack justify="center" textAlign="center" textColor="white">
             <CloseButton mb="-40px" onClick={cancle} />
-            <Image src="/logo-light.svg" h="5rem" alt="Logo" onClick={cancle} />
+            <Image src="/logo-light.svg" h="2rem" alt="Logo" onClick={cancle} />
             <Heading fontWeight="bold" fontSize="lg">
               تجربه سریع‌تر و امکان مرور آفلاین
             </Heading>
