@@ -46,7 +46,11 @@ export default function CallToActionWithVideo() {
               یادگیری برای همه
             </Text>
             <br />
-            <Text as={'span'} color={'primary.500'}>
+            <Text
+              fontSize={{ base: 'xl', sm: '2xl', lg: '4xl' }}
+              as={'span'}
+              color={'primary.500'}
+            >
               دوره‌ها جامع نیمکت آکادمی
             </Text>
           </Heading>

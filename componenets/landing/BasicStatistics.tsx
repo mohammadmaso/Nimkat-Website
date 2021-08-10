@@ -59,7 +59,7 @@ export default function BasicStatistics() {
       <chakra.h1
         textAlign={'center'}
         py={10}
-        fontSize={48}
+        fontSize={38}
         fontWeight={'light'}
         color={useColorModeValue('gray.700', 'gray.50')}
       >

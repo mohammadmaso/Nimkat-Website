@@ -134,7 +134,7 @@ export default function Testimonial() {
         </chakra.h3>
         <chakra.h1
           pb={5}
-          fontSize={48}
+          fontSize={38}
           fontWeight={'light'}
           color={useColorModeValue('gray.700', 'gray.50')}
         >
