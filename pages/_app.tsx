@@ -21,6 +21,7 @@ import { REFRESH_TOKEN } from '../graphql/mutations/auth';
 import Router from 'next/router';
 
 import { setContext } from '@apollo/client/link/context';
+import { PWAInstallPrompt } from '../componenets/PWAInstallPrompt';
 
 const getNewToken = () => {
   return client.query({ query: REFRESH_TOKEN }).then((response) => {
@@ -101,6 +102,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
       <ChakraProvider theme={theme}>
+        <PWAInstallPrompt />
         <Fonts />
         <Component {...pageProps} />
       </ChakraProvider>

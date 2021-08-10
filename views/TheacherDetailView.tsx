@@ -15,6 +15,7 @@ const TheacherDetailView = (props: Props) => {
     variables: { teacherId: props.id },
   });
   if (loading) return <Spinner mt={3} color="primary" />;
+  if (error) return <p>خطا</p>;
   return (
     <>
       <TeacherDetail {...data} />

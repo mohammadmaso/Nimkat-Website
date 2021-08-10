@@ -6,7 +6,7 @@ import BaseLayout from '../layouts/BaseLayout';
 
 export default function About() {
   return (
-    <BaseLayout title={'یادگیری برای همه'}>
+    <BaseLayout title={'پشتیبانی'}>
       <Stack justify="center" align="center" height="65vh">
         <Text>
           نیمکت آکادمی مجموعه آموزشی نیمکت آکادمی، در سال ۱۴۰۰ به همت جمعی از

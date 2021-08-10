@@ -6,7 +6,7 @@ import CourseListView from '../../views/CourseListView';
 
 export default function Home() {
   return (
-    <BaseLayout title={'نیمکت | دوره‌ها'}>
+    <BaseLayout title={'دوره‌ها'}>
       <CategoryListView />
       <CourseListView />
     </BaseLayout>

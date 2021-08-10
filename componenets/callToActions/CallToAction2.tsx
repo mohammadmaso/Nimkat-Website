@@ -5,13 +5,13 @@ import {
   Text,
   VStack,
   useBreakpointValue,
+  Wrap,
 } from '@chakra-ui/react';
 
 export default function CallToAction2() {
   return (
     <Flex
       w={'full'}
-      h={'30vh'}
       rounded="md"
       backgroundImage={'url(/images/photo-1554415707-6e8cfc93fe23.jpeg)'}
       backgroundSize={'cover'}
@@ -26,7 +26,12 @@ export default function CallToAction2() {
         bgGradient={'linear(to-l, blackAlpha.900, transparent)'}
         rounded="md"
       >
-        <Stack maxW={'full'} align={'flex-start'} spacing={4}>
+        <Stack
+          align={'flex-start'}
+          spacing={4}
+          px={useBreakpointValue({ base: 4, md: 8 })}
+          py="6"
+        >
           <Stack>
             <Text
               color={'white'}
@@ -38,7 +43,7 @@ export default function CallToAction2() {
             </Text>
             <Text color={'white'}>دوره‌های استاندارد نیمکت آکادمی</Text>
           </Stack>
-          <Stack direction={'row'}>
+          <Wrap>
             <Button colorScheme="primary" rounded={'full'}>
               آخرین دوره‌ها
             </Button>
@@ -50,7 +55,7 @@ export default function CallToAction2() {
             >
               دوره‌های در دست تالیف
             </Button>
-          </Stack>
+          </Wrap>
         </Stack>
       </VStack>
     </Flex>

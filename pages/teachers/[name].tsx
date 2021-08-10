@@ -8,7 +8,7 @@ export default function Teachers() {
   const router = useRouter();
 
   return (
-    <BaseLayout title={'نیمکت | اساتید'}>
+    <BaseLayout title={'استاد'}>
       <TheacherDetailView id={router.query.id} />
     </BaseLayout>
   );

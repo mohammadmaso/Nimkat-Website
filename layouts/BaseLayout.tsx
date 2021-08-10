@@ -13,7 +13,7 @@ const BaseLayout = (props: Props): ReactElement => {
   return (
     <>
       <Head>
-        <title>{props.title}</title>
+        <title>{`نیمکت آکادمی | ${props.title} `}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBarView />

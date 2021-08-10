@@ -53,6 +53,7 @@ export const LearnSidbarSubMenu = (props: any) => {
             props.lessons.edges.map((item: any) => (
               <ChakraLink key={item.node.id}>
                 <Link
+                  passHref
                   href={{
                     pathname: '/me/learn/[id]',
                     query: { lesson: item.node.id, id: router.query.id },

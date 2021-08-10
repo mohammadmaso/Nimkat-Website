@@ -1,6 +1,13 @@
-import { Box, Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Stack,
+  Text,
+  Image,
+} from '@chakra-ui/react';
 import React from 'react';
-import Image from 'next/image';
 import { FiSearch } from 'react-icons/fi';
 
 interface Props {}
@@ -8,7 +15,11 @@ interface Props {}
 const LandingCallToAction1 = (props: Props) => {
   return (
     <Box py="10">
-      <Flex align="center" justify="space-between">
+      <Flex
+        align="center"
+        direction={{ base: 'column', md: 'row', lg: 'row' }}
+        justify="space-between"
+      >
         <Stack flex={1}>
           <Heading color="primary" fontWeight="light" size="2xl">
             حرفه‌ای یاد بگیر!
@@ -25,18 +36,15 @@ const LandingCallToAction1 = (props: Props) => {
             colorScheme="primary"
             variant="solid"
             leftIcon={<FiSearch />}
-            width="sm"
           >
             جستجو میان دوره‌ها
           </Button>
         </Stack>
-        <Box>
+        <Box flex="1" py="4">
           <Image
+            objectFit={'cover'}
             src={'/images/Landing1.svg'}
-            height={500}
-            width={500}
-            layout="intrinsic"
-            alt={'appName'}
+            alt={'Landing image'}
           />
         </Box>
       </Flex>

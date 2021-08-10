@@ -10,6 +10,7 @@ export default function CircleLogo(props: any) {
         height={props.height ?? 60}
         width={props.width ?? 60}
         layout="intrinsic"
+        alt="nimcat logo"
       />
     </Box>
   );

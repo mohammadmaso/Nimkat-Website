@@ -2,7 +2,6 @@ import {
   Box,
   chakra,
   Container,
-  Link,
   SimpleGrid,
   Stack,
   Text,
@@ -19,7 +18,7 @@ import { ReactNode } from 'react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { BiMailSend } from 'react-icons/bi';
 import Image from 'next/image';
-
+import Link from 'next/link';
 import {
   AiOutlineInstagram,
   AiOutlineYoutube,
@@ -47,17 +46,17 @@ export default function LargeWithNewsletter() {
           </Box>
           <Flex>
             <Stack fontSize="sm" colorSchema="primary">
-              <Link>دوره‌ها</Link>
-              <Link>اساتید</Link>
-              <Link>درباره‌ی نیمکت آکادمی</Link>
-              <Link>مجله نیمکت</Link>
-              <Link>پشتیبانی</Link>
+              <Link href="/course">دوره‌ها</Link>
+              <Link href="/teachers">اساتید</Link>
+              <Link href="/about">درباره‌ی نیمکت آکادمی</Link>
+              <Text>مجله نیمکت</Text>
+              <Link href="/support">پشتیبانی</Link>
             </Stack>
             <Spacer />
             <Stack fontSize="sm" colorSchema="primary">
-              <Link> سیاست حفظ حریم خصوصی</Link>
-              <Link>قوانین و مقررات</Link>
-              <Link>فرصت شغلی</Link>
+              <Link href="/privacy"> سیاست حفظ حریم خصوصی</Link>
+              <Link href="/term-of-use">قوانین و مقررات</Link>
+              <Link href="https://jobvision.ir">فرصت شغلی</Link>
             </Stack>
           </Flex>
           <Flex
@@ -94,8 +93,7 @@ export default function LargeWithNewsletter() {
                 <AiOutlineInstagram />
               </Grid>
               <Text colorSchema="primary">
-                {' '}
-                تمامی حقوق برای اکادمی نیمکت محفوظ است. | ۱۴۰۰{' '}
+                تمامی حقوق برای اکادمی نیمکت محفوظ است. | ۱۴۰۰
               </Text>
             </Stack>
           </Flex>

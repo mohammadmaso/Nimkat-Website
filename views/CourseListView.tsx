@@ -7,6 +7,7 @@ import { useAllCourseQuery } from '../graphql/generated/types';
 const CourseListView = () => {
   const { loading, error, data } = useAllCourseQuery();
   if (loading) return <Spinner mt={3} color="primary" />;
+  if (error) return <p>خطا</p>;
   return (
     <>
       <CourseCarousal {...data} />

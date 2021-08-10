@@ -5,7 +5,7 @@ import TeachersListView from '../../views/TeachersListView';
 
 export default function Teachers() {
   return (
-    <BaseLayout title={'نیمکت | اساتید'}>
+    <BaseLayout title={'اساتید'}>
       <TeachersListView />
     </BaseLayout>
   );
