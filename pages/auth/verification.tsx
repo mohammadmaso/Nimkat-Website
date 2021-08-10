@@ -12,7 +12,7 @@ import {
   Text,
   Box,
   Spinner,
-  Image
+  Image,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
@@ -25,6 +25,7 @@ import {
   RESEND_ACTIVATION_SMS,
 } from '../../graphql/mutations/auth';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 export default function SignIn() {
   const [code, setCode] = useState('');
@@ -96,6 +97,10 @@ export default function SignIn() {
 
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+      <Head>
+        <title>نیمکت آکادمی | تایید ثبت ‌نام</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Flex p={8} flex={1} align={'center'} justify={'center'} zIndex={100}>
         <Stack spacing={4} w={'full'} maxW={'md'}>
           <TextLogo height="100" width="200" />
