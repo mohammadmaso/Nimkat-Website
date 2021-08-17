@@ -22,15 +22,15 @@ const CategoryCart = (props: Props) => {
   return (
     <Center py={6} m={2}>
       <Box
-        bg={useColorModeValue('white', 'gray.900')}
-        boxShadow={'md'}
-        rounded={'md'}
+        bgCoror={useColorModeValue('whiteAlpha.200', 'gray.900')}
+        dropShadow={'lg'}
+        rounded={'lg'}
         overflow={'hidden'}
         h={'150px'}
         w={'full'}
         position="relative"
         transition={'all .3s ease'}
-        _hover={{ transform: 'scale(1.1,1.1)' }}
+        _hover={{ transform: 'scale(1.5,1.5)' }}
       >
         <Stack
           justifyContent="center"

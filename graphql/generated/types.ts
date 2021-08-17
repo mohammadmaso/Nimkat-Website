@@ -135,6 +135,7 @@ export type BoughtCoursesTypeCompleteLessonsArgs = {
   createdAt?: Maybe<Scalars['DateTime']>;
   modifyAt?: Maybe<Scalars['DateTime']>;
   shortDescription?: Maybe<Scalars['String']>;
+  content?: Maybe<Scalars['String']>;
   published?: Maybe<Scalars['Boolean']>;
   video?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
@@ -221,6 +222,7 @@ export type CourseLessonType = Node & {
   createdAt: Scalars['DateTime'];
   modifyAt: Scalars['DateTime'];
   shortDescription?: Maybe<Scalars['String']>;
+  content?: Maybe<Scalars['String']>;
   published: Scalars['Boolean'];
   video: Scalars['String'];
   slug: Scalars['String'];
@@ -421,6 +423,7 @@ export type CourseSectionTypeLessonsArgs = {
   createdAt?: Maybe<Scalars['DateTime']>;
   modifyAt?: Maybe<Scalars['DateTime']>;
   shortDescription?: Maybe<Scalars['String']>;
+  content?: Maybe<Scalars['String']>;
   published?: Maybe<Scalars['Boolean']>;
   video?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
@@ -470,6 +473,7 @@ export type CourseType = Node & {
   discountPrice?: Maybe<Scalars['Int']>;
   sections: CourseSectionTypeConnection;
   published: Scalars['Boolean'];
+  underConstruction: Scalars['Boolean'];
   slug: Scalars['String'];
   video: Scalars['String'];
   favouritecoursemodelSet: FavouriteCourseTypeConnection;
@@ -1323,6 +1327,7 @@ export type SecureCourseType = Node & {
   discountPrice?: Maybe<Scalars['Int']>;
   sections: CourseSectionTypeConnection;
   published: Scalars['Boolean'];
+  underConstruction: Scalars['Boolean'];
   slug: Scalars['String'];
   video: Scalars['String'];
   favouritecoursemodelSet: FavouriteCourseTypeConnection;
@@ -1907,7 +1912,7 @@ export type AllCourseQuery = (
       { __typename?: 'CourseTypeEdge' }
       & { node?: Maybe<(
         { __typename?: 'CourseType' }
-        & Pick<CourseType, 'id' | 'title' | 'createdAt' | 'shortDescription' | 'image' | 'language' | 'price' | 'discountPrice' | 'slug'>
+        & Pick<CourseType, 'id' | 'title' | 'createdAt' | 'shortDescription' | 'underConstruction' | 'image' | 'language' | 'price' | 'discountPrice' | 'slug'>
         & { category?: Maybe<(
           { __typename?: 'CourseCategoryType' }
           & Pick<CourseCategoryType, 'title'>
@@ -1960,7 +1965,7 @@ export type SecureBougthCourseQuery = (
                 { __typename?: 'CourseLessonTypeEdge' }
                 & { node?: Maybe<(
                   { __typename?: 'CourseLessonType' }
-                  & Pick<CourseLessonType, 'title' | 'id' | 'video' | 'shortDescription'>
+                  & Pick<CourseLessonType, 'title' | 'id' | 'video' | 'shortDescription' | 'content'>
                 )> }
               )>> }
             ) }
@@ -2048,7 +2053,7 @@ export type TeacherDetailQuery = (
         { __typename?: 'SecureCourseTypeEdge' }
         & { node?: Maybe<(
           { __typename?: 'SecureCourseType' }
-          & Pick<SecureCourseType, 'id' | 'title' | 'createdAt' | 'shortDescription' | 'image' | 'language' | 'price' | 'discountPrice' | 'slug'>
+          & Pick<SecureCourseType, 'id' | 'title' | 'createdAt' | 'shortDescription' | 'underConstruction' | 'image' | 'language' | 'price' | 'discountPrice' | 'slug'>
           & { category?: Maybe<(
             { __typename?: 'CourseCategoryType' }
             & Pick<CourseCategoryType, 'title'>
@@ -2078,7 +2083,7 @@ export type MeQuery = (
   { __typename?: 'Query' }
   & { me?: Maybe<(
     { __typename?: 'UserType' }
-    & Pick<UserType, 'firstName' | 'lastName' | 'email' | 'avatar'>
+    & Pick<UserType, 'firstName' | 'lastName' | 'username' | 'email' | 'avatar'>
   )> }
 );
 
@@ -2470,6 +2475,7 @@ export const AllCourseDocument = gql`
         category {
           title
         }
+        underConstruction
         image
         language
         price
@@ -2544,6 +2550,7 @@ export const SecureBougthCourseDocument = gql`
                   id
                   video
                   shortDescription
+                  content
                 }
               }
             }
@@ -2708,6 +2715,7 @@ export const TeacherDetailDocument = gql`
           title
           createdAt
           shortDescription
+          underConstruction
           category {
             title
           }
@@ -2767,6 +2775,7 @@ export const MeDocument = gql`
   me {
     firstName
     lastName
+    username
     email
     avatar
   }

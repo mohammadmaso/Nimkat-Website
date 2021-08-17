@@ -3,15 +3,19 @@ import React, { ReactElement } from 'react';
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import CategoryCard from '../cards/CategoryCard';
 import Slider from 'react-slick';
+import { Settings } from 'react-slick';
 
 export default function CategoryCarousal(props: any): ReactElement {
-  const settings = {
+  const settings: Settings = {
     dots: true,
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    initialSlide: 0,
+    initialSlide: 1,
     arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -40,7 +44,7 @@ export default function CategoryCarousal(props: any): ReactElement {
     ],
   };
   return (
-    <Box>
+    <Box mb="10">
       <Heading color="primary" size="md" fontWeight="400" mr={1}>
         دسته‌بندی‌ها
       </Heading>

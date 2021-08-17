@@ -44,6 +44,7 @@ query TeacherDetail($teacherId: ID!) {
           title
           createdAt
           shortDescription
+          underConstruction
           category {
             title
           }

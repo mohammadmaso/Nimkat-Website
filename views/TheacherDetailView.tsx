@@ -5,6 +5,8 @@ import React from 'react';
 import TeacherDetail from '../componenets/TeacherDetail';
 import { useTeacherDetailQuery } from '../graphql/generated/types';
 import { GET_TEACHER_BY_ID } from '../graphql/queries/teacher';
+import ApiLoading from '../componenets/ApiLoading';
+import ApiError from '../componenets/ApiError';
 
 interface Props {
   id: any;
@@ -14,8 +16,9 @@ const TheacherDetailView = (props: Props) => {
   const { loading, error, data } = useTeacherDetailQuery({
     variables: { teacherId: props.id },
   });
-  if (loading) return <Spinner mt={3} color="primary" />;
-  if (error) return <p>خطا</p>;
+
+  if (loading) return <ApiLoading />;
+  if (error) return <ApiError />;
   return (
     <>
       <TeacherDetail {...data} />

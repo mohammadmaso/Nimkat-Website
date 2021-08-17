@@ -22,6 +22,7 @@ query AllCourse {
         category {
           title
         }
+        underConstruction
         image
         language
         price
@@ -68,6 +69,7 @@ query SecureBougthCourse($secureBougthCourseId: String) {
                   id
                   video
                   shortDescription
+                  content
                 }
               }
             }

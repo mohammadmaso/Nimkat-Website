@@ -10,6 +10,7 @@ import {
   useBreakpointValue,
   useDisclosure,
   useEventListener,
+  Wrap,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Logo from '../logos/TextLogo';
@@ -63,6 +64,7 @@ const NavBar = (props: any) => {
           flex={{ base: 'flex', md: 'auto' }}
           ml={{ base: -2 }}
           display={{ base: 'flex', md: 'none' }}
+          w="6.5rem"
         >
           <IconButton
             onClick={onToggle}
@@ -74,19 +76,17 @@ const NavBar = (props: any) => {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Link href="/">
-            <Box
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-              fontFamily={'heading'}
-              color={useColorModeValue('gray.800', 'white')}
-            >
-              <Logo
-                darkLogo
-                height={stickyNav ? 50 : 50}
-                width={stickyNav ? 120 : 120}
-              />
-            </Box>
-          </Link>
+          <Box
+            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+            fontFamily={'heading'}
+            color={useColorModeValue('gray.800', 'white')}
+          >
+            <Logo
+              darkLogo
+              height={stickyNav ? 50 : 50}
+              width={stickyNav ? 120 : 120}
+            />
+          </Box>
 
           <Flex
             align="center"
@@ -98,7 +98,9 @@ const NavBar = (props: any) => {
             <DesktopNav />
           </Flex>
         </Flex>
-        {props.children}
+        <Wrap justify="flex-start" w="6.5rem">
+          {props.children}
+        </Wrap>
       </Flex>
 
       <MobileNav isOpen={isOpen} onClose={onClose} />

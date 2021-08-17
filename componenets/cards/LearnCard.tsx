@@ -27,56 +27,55 @@ const LearnCard = (props: any) => {
         pathname: '/me/learn/[id]',
         query: { id: props.id },
       }}
+      passHref
     >
-      <Center py={6}>
-        <Box
-          w={'sm'}
-          bg={useColorModeValue('white', 'gray.900')}
-          boxShadow={'md'}
-          rounded={'md'}
-          p={4}
-          overflow={'hidden'}
-          alignContent="space-between"
-        >
-          <Box>
-            <Box bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
-              <Image
-                height="170"
-                alt={props.title}
-                src={props.image}
-                objectFit={'cover'}
-              />
-            </Box>
-            <Tag mb={3} variant="subtle" colorScheme="cyan">
-              {props.course.category.title}
-            </Tag>
-            <Heading
-              color={useColorModeValue('gray.700', 'white')}
-              fontSize={'md'}
-              fontFamily={'body'}
-            >
-              {props.course.title}
-            </Heading>
-            <Stack
-              mt={2}
-              direction={'row'}
-              fontSize="sm"
-              spacing={2}
-              align={'center'}
-            >
-              <FiFeather />
-              <Text fontWeight={400}>{props.course.teacher.name}</Text>
-            </Stack>
+      <Box
+        w={'sm'}
+        bg={useColorModeValue('white', 'gray.900')}
+        boxShadow={'md'}
+        rounded={'md'}
+        p={4}
+        overflow={'hidden'}
+        alignContent="space-between"
+        cursor="pointer"
+      >
+        <Box>
+          <Box bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
+            <Image
+              alt={props.title}
+              src={props.course.image}
+              objectFit="cover"
+            />
           </Box>
-          <Box>
-            {props.paymentStatus ? (
-              <Badge colorScheme="green">پرداخت شده</Badge>
-            ) : (
-              <Badge colorScheme="red">پرداخت نشده</Badge>
-            )}
-          </Box>
+          <Tag mb={3} variant="subtle" colorScheme="cyan">
+            {props.course.category.title}
+          </Tag>
+          <Heading
+            color={useColorModeValue('gray.700', 'white')}
+            fontSize={'md'}
+            fontFamily={'body'}
+          >
+            {props.course.title}
+          </Heading>
+          <Stack
+            mt={2}
+            direction={'row'}
+            fontSize="sm"
+            spacing={2}
+            align={'center'}
+          >
+            <FiFeather />
+            <Text fontWeight={400}>{props.course.teacher.name}</Text>
+          </Stack>
         </Box>
-      </Center>
+        <Box>
+          {props.paymentStatus ? (
+            <Badge colorScheme="green">پرداخت شده</Badge>
+          ) : (
+            <Badge colorScheme="red">پرداخت نشده</Badge>
+          )}
+        </Box>
+      </Box>
     </Link>
   );
 };

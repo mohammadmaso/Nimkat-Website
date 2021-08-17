@@ -43,7 +43,7 @@ export default function CourseCarousal(props: any): ReactElement {
     ],
   };
   return (
-    <Box>
+    <Box mb="10">
       <Heading color="primary" size="md" fontWeight="400" mr={1}>
         آخرین دوره‌ها
       </Heading>

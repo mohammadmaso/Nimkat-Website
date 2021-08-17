@@ -14,7 +14,7 @@ import {
   Spacer,
   Grid,
 } from '@chakra-ui/react';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { BiMailSend } from 'react-icons/bi';
 import Image from 'next/image';
@@ -27,12 +27,17 @@ import {
 } from 'react-icons/ai';
 
 import TextLogo from '../logos/TextLogo';
+import { SocialButtons } from '../SocialButtons';
 
 export default function LargeWithNewsletter() {
   return (
     <Box boxShadow="inner" bgColor={useColorModeValue('gray.100', 'gray.900')}>
-      <Container as={Stack} maxW={'7xl'} py="10" colorScheme="primary">
-        <SimpleGrid columns={{ base: 1, sm: 1, md: 3 }} spacing={8}>
+      <Container maxW={'full'} py="10" px={[4, 4, 120]}>
+        <SimpleGrid
+          columns={{ base: 1, sm: 1, md: 3 }}
+          spacing={8}
+          alignItems="end"
+        >
           <Box>
             <Stack>
               <TextLogo width="140" height="50" />
@@ -44,13 +49,13 @@ export default function LargeWithNewsletter() {
               </Text>
             </Stack>
           </Box>
-          <Flex>
+          <Flex columns={{ base: 1, sm: 1, md: 2 }} justify="space-around">
             <Stack fontSize="sm" colorSchema="primary">
               <Link href="/course">دوره‌ها</Link>
               <Link href="/teachers">اساتید</Link>
               <Link href="/about">درباره‌ی نیمکت آکادمی</Link>
               <Text>مجله نیمکت</Text>
-              <Link href="/support">پشتیبانی</Link>
+              <Link href="/contact">تماس‌ با ما</Link>
             </Stack>
             <Spacer />
             <Stack fontSize="sm" colorSchema="primary">
@@ -59,44 +64,41 @@ export default function LargeWithNewsletter() {
               <Link href="https://jobvision.ir">فرصت شغلی</Link>
             </Stack>
           </Flex>
-          <Flex
-            justifyContent="flex-end"
-            justifyItems="flex-end"
-            direction="row"
+          <Stack
+            justify={{
+              base: 'center',
+              sm: 'center',
+              md: 'flex-end',
+              lg: 'flex-end',
+            }}
+            alignItems={{
+              base: 'center',
+              sm: 'center',
+              md: 'flex-end',
+              lg: 'flex-end',
+            }}
           >
-            <Stack>
-              {/* <Box>
-                <Image
-                  src="/images/samandehi.png"
-                  layout="fixed"
-                  width={115 / 1.3}
-                  height={150 / 1.3}
-                  alt="samandehi"
-                />
-                <Image
-                  src="/images/enamad.png"
-                  layout="fixed"
-                  width={138 / 1.3}
-                  height={150 / 1.3}
-                  alt="enamad"
-                />
-              </Box> */}
-              <Grid
-                templateColumns="repeat(5, 1fr)"
-                gap={1}
-                colorSchema="primary"
-                fontSize="xl"
-              >
-                <AiOutlineTwitter />
-                <AiOutlineWhatsApp />
-                <AiOutlineYoutube />
-                <AiOutlineInstagram />
-              </Grid>
-              <Text colorSchema="primary">
-                تمامی حقوق برای اکادمی نیمکت محفوظ است. | ۱۴۰۰
-              </Text>
-            </Stack>
-          </Flex>
+            <Box>
+              <Image
+                src="/images/samandehi.png"
+                layout="fixed"
+                width={115 / 1.3}
+                height={150 / 1.3}
+                alt="samandehi"
+              />
+              <Image
+                src="/images/enamad.png"
+                layout="fixed"
+                width={138 / 1.3}
+                height={150 / 1.3}
+                alt="enamad"
+              />
+            </Box>
+            <SocialButtons />
+            <Text fontSize="xs" textColor="primary">
+              تمامی حقوق برای نیمکت‌ آکادمی محفوظ است. | ۱۴۰۰ ©
+            </Text>
+          </Stack>
         </SimpleGrid>
       </Container>
     </Box>

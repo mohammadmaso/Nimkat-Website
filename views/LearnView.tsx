@@ -4,6 +4,9 @@ import LearnPage from '../componenets/learn/LearnPage';
 import { Spinner } from '@chakra-ui/react';
 import { useSecureBougthCourseQuery } from '../graphql/generated/types';
 
+import ApiLoading from '../componenets/ApiLoading';
+import ApiError from '../componenets/ApiError';
+
 interface Props {
   id: any;
   lesson: any;
@@ -36,8 +39,8 @@ const LearnView = (props: Props) => {
     return (CompleteLessonsCount / lessonsCount) * 100;
   };
 
-  if (loading) return <Spinner mt={3} color="primary" />;
-  if (error) return <p>خطا</p>;
+  if (loading) return <ApiLoading />;
+  if (error) return <ApiError />;
   return (
     <div>
       <LearnPage

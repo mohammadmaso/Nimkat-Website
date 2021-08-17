@@ -18,7 +18,7 @@ const BaseLayout = (props: Props): ReactElement => {
       </Head>
       <NavBarView />
       <Box height="12vh" />
-      <Box minHeight="67vh" px={[2, 2, 120]}>
+      <Box minHeight="67vh" px={[2, 2, 120]} mb="10">
         {props.children}
       </Box>
       <MainFooter />

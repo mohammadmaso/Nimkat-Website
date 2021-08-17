@@ -44,8 +44,8 @@ const components = {
 
 
 const fonts = {
-    heading: "peyda",
-    body: "iranyekan",
+    heading: "iranyekanfanum",
+    body: "iranyekanfanum",
 }
 const direction = "rtl"
 

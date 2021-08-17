@@ -96,7 +96,7 @@ export default function SignIn() {
                 {loading ? <Spinner /> : 'ورود'}
               </Button>
 
-              <Button
+              {/* <Button
                 w={'full'}
                 maxW={'md'}
                 rounded="full"
@@ -107,7 +107,7 @@ export default function SignIn() {
                 <Center>
                   <Text>ورود با گوگل</Text>
                 </Center>
-              </Button>
+              </Button> */}
             </Stack>
           </form>
         </Stack>

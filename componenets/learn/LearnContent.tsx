@@ -30,7 +30,7 @@ const LearnContent = (props: any) => {
         borderRadius="md"
         mt="2"
       >
-        <Tabs width="full" align="center" pt={5}>
+        <Tabs width="full" pt={5}>
           <TabList>
             <Tab>
               <FiVideo />
@@ -53,7 +53,7 @@ const LearnContent = (props: any) => {
               </AspectRatio>
             </TabPanel>
             <TabPanel>
-              <p>{props.shortDescription}</p>
+              <div dangerouslySetInnerHTML={{ __html: props.content }} />
             </TabPanel>
           </TabPanels>
         </Tabs>

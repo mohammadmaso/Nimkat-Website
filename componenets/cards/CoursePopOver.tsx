@@ -39,6 +39,7 @@ interface Props {
   slug: string;
   createdAt: string;
   video: string;
+  underConstruction: boolean;
 }
 
 const CoursePopOver = (props: Props) => {
@@ -51,11 +52,13 @@ const CoursePopOver = (props: Props) => {
           <PopoverHeader fontSize="large" fontWeight="bold">
             <Flex justify="space-between">
               <Text> {props.title}</Text>
+
               <Button
                 size="sm"
                 variant="solid"
                 rounded="full"
                 colorScheme="primary"
+                disabled={props.underConstruction}
               >
                 ثبت‌نام
               </Button>

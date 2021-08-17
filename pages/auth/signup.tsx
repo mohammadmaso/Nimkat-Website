@@ -154,7 +154,7 @@ export default function SingUp() {
                     >
                       ثبت نام
                     </Button>
-                    <Button
+                    {/* <Button
                       w={'full'}
                       maxW={'md'}
                       rounded="full"
@@ -165,7 +165,7 @@ export default function SingUp() {
                       <Center>
                         <Text>ثبت‌نام با گوگل</Text>
                       </Center>
-                    </Button>
+                    </Button> */}
                   </Stack>
                 </Form>
               )}
