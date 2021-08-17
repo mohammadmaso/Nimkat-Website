@@ -31,8 +31,8 @@ export default function Home() {
                 <FiPhone />
                 <Text fontWeight="bold">شماره تلفن</Text>
               </Wrap>
-              <Link href="tel:+989380374660" dir="ltr">
-                +۹۸۹۳۸۰۳۷۴۶۶۰
+              <Link href="tel:+02146055342" dir="ltr">
+                +02146055342
               </Link>
             </Wrap>
             <Divider />

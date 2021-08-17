@@ -46,7 +46,7 @@ export default function CategoryCarousal(props: any): ReactElement {
   return (
     <Box mb="10">
       <Heading color="primary" size="md" fontWeight="400" mr={1}>
-        دسته‌بندی‌ها
+        مدرسه‌ها
       </Heading>
       <Stack width="full" alignContent="center">
         <Slider {...settings}>
