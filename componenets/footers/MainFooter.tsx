@@ -78,7 +78,7 @@ export default function LargeWithNewsletter() {
               lg: 'flex-end',
             }}
           >
-            <Box>
+            {/* <Box>
               <Image
                 src="/images/samandehi.png"
                 layout="fixed"
@@ -93,7 +93,7 @@ export default function LargeWithNewsletter() {
                 height={150 / 1.3}
                 alt="enamad"
               />
-            </Box>
+            </Box> */}
             <SocialButtons />
             <Text fontSize="xs" textColor="primary">
               تمامی حقوق برای نیمکت‌ آکادمی محفوظ است. | ۱۴۰۰ ©
