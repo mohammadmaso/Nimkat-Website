@@ -3,6 +3,7 @@ import React, { ReactElement } from 'react';
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import CourseCard from '../cards/CourseCard';
 import Slider from 'react-slick';
+import { CarousalNextArrow, CarousalPrevArrow } from './CarousalArrow';
 
 interface Props {
   slideToShow?: number;
@@ -14,7 +15,8 @@ export default function CourseCarousal(props: any): ReactElement {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: false,
+    nextArrow: <CarousalNextArrow />,
+    prevArrow: <CarousalPrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
