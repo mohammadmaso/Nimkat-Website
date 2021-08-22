@@ -4,6 +4,7 @@ import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import CategoryCard from '../cards/CategoryCard';
 import Slider from 'react-slick';
 import { Settings } from 'react-slick';
+import { CarousalNextArrow, CarousalPrevArrow } from './CarousalArrow';
 
 export default function CategoryCarousal(props: any): ReactElement {
   const settings: Settings = {
@@ -12,7 +13,8 @@ export default function CategoryCarousal(props: any): ReactElement {
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 1,
-    arrows: false,
+    nextArrow: <CarousalNextArrow />,
+    prevArrow: <CarousalPrevArrow />,
     autoplay: true,
     autoplaySpeed: 5000,
     pauseOnHover: true,
